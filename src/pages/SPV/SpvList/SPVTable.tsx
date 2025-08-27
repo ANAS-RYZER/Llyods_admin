@@ -102,7 +102,7 @@ const SPVTable: React.FC<SPVTableProps> = ({ data, setSpv }) => {
       cell: (info: any) => {
         const aum = info.getValue();
         const value = formatCompactNumber(aum || 0);
-        return <span>$ {value}</span>;
+        return <span>€ {value}</span>;
       },
     },
     {

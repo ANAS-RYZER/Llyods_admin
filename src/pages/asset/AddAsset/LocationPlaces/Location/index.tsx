@@ -110,7 +110,7 @@ const Index: React.FC = () => {
     <div className='container mx-auto'>
       <Card className='mb-6'>
         <CardHeader className='pb-3'>
-          <CardTitle>I am the Danger </CardTitle>
+          <CardTitle>Location of the Asset</CardTitle>
         </CardHeader>
         <CardContent>
           <APIProvider

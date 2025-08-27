@@ -100,7 +100,7 @@ const handleOnUpdate = async (index: number, payload: { templateName: string; pr
         <h1 className="text-lg font-semibold text-black">
           Document For Investors
         </h1>
-        <Button type="button" onClick={handleAdd}>
+        <Button type="button" onClick={handleAdd} className=" text-white px-4 py-2 rounded-md transition-colors duration-200 flex items-center gap-2 bg-black hover:bg-gray-800">
           <span className="text-lg">+</span>
           <span>Investors</span>
         </Button>

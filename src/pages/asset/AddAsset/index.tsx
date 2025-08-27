@@ -287,7 +287,7 @@ function Index() {
                 type="submit"
                 onClick={handleSubmitNext}
                 disabled={!isDirty || isPending || status === "loading"}
-                className="w-36 cursor-pointer"
+                className="w-36 cursor-pointer bg-black text-white hover:bg-gray-800 flex items-center justify-center"
               >
                 <SaveIcon className="mr-2" />
                 Save Changes
@@ -297,7 +297,7 @@ function Index() {
                 type="button"
                 onClick={nextTab}
                 disabled={isPending || status === "loading"}
-                className="w-32 cursor-pointer"
+                className="w-32 cursor-pointer bg-black text-white hover:bg-gray-800 flex items-center justify-center"
               >
                 <ArrowRight />
                 Next

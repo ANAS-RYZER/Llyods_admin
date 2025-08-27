@@ -111,7 +111,7 @@ export default function AssetClass({
               disabled={option.isDisabled}
               className={`p-4 h-full cursor-pointer flex items-start gap-3 transition-all  ${
                 selectedAsset === option.id
-                  ? "ring-1 ring-violet-500 bg-violet-50"
+                  ? "ring-1 ring-[#0eb57b] bg-[#0eb57b]/10"
                   : "hover:bg-gray-50"
               }`}
               onClick={() => setSelectedAsset(option.id)}
@@ -119,8 +119,8 @@ export default function AssetClass({
               <div
                 className={`${
                   selectedAsset === option.id
-                    ? "text-violet-500 bg-violet-100 "
-                    : "text-gray-500 bg-gray-100 "
+                    ? "text-[#0eb57b] bg-[#0eb57b]/10"
+                    : "text-gray-500 bg-gray-100"
                 } mt-1 p-2 rounded-full`}
               >
                 {option.icon}
@@ -131,7 +131,7 @@ export default function AssetClass({
               </div>
               <div className="flex items-center justify-center h-5 w-5 rounded-full border border-gray-300 ml-2">
                 {selectedAsset === option.id && (
-                  <div className="h-3 w-3 rounded-full bg-violet-500" />
+                  <div className="h-3 w-3 rounded-full bg-[#0eb57b]" />
                 )}
               </div>
             </Button>
@@ -143,7 +143,7 @@ export default function AssetClass({
             Close
           </Button>
           <Button
-            className="bg-violet-500 hover:bg-violet-600 text-white"
+            className="bg-[#0eb57b] hover:bg-[#0eb57b]/80 text-white"
             onClick={() => navigate(`/add-asset`)}
           >
             Next Step

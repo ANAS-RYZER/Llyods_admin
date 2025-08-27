@@ -109,8 +109,8 @@ const index = () => {
           investment: 225000,
           percentage: 9,
           status: "Paused",
-          bgColor: "bg-violet-100",
-          textColor: "text-violet-600",
+          bgColor: "bg-[#0eb57b]/10",
+          textColor: "text-[#0eb57b]",
         },
       ]
   return (

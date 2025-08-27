@@ -167,7 +167,7 @@ export default function AssetStages({
         <div className="w-72 mx-auto p-6">
           <div className="">
             <div className="flex items-center justify-between mb-2">
-              <Badge className="text-[10px] rounded-full">
+              <Badge className="text-[10px] rounded-full bg-black hover:bg-black/80">
                 STEP {completedSteps} OF {totalSteps}
               </Badge>
               <div className="text-end text-xs font-medium">

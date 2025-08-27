@@ -1,7 +1,6 @@
-
-import * as React from 'react';
-import { Check } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import * as React from "react";
+import { Check } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 // Update the StepType interface to include an id field
 export interface StepType {
@@ -35,9 +34,9 @@ export function Stepper({
   };
 
   return (
-    <div className={cn('w-full', className)}>
+    <div className={cn("w-full", className)}>
       {/* Steps */}
-      <div className='mb-8 flex flex-col md:flex-row md:items-center'>
+      <div className="mb-8 flex flex-col md:flex-row md:items-center">
         {steps.map((step, index) => {
           const isActive = step.id === currentStepId;
           const isCompleted = step.completed;
@@ -48,41 +47,41 @@ export function Stepper({
             <React.Fragment key={step.id}>
               <div
                 className={cn(
-                  'group flex items-center',
-                  isDisabled ? 'cursor-not-allowed' : 'cursor-pointer',
-                  'md:flex-col md:items-center'
+                  "group flex items-center",
+                  isDisabled ? "cursor-not-allowed" : "cursor-pointer",
+                  "md:flex-col md:items-center"
                 )}
                 onClick={() => !isDisabled && handleStepClick(step.id)}
               >
                 <div
                   className={cn(
-                    'flex h-10 w-10 items-center justify-center rounded-full border-2 transition-colors duration-200',
+                    "flex h-10 w-10 items-center justify-center rounded-full border-2 transition-colors duration-200",
                     isActive && !isCompleted
-                      ? 'border-primary bg-primary text-primary-foreground'
+                      ? "border-primary bg-[#0eb57b] text-primary-foreground"
                       : isCompleted
-                      ? 'border-green-500 bg-green-500 text-white'
+                      ? "border-green-500 bg-green-500 text-white"
                       : isDisabled
-                      ? 'border-muted bg-muted text-muted-foreground'
-                      : 'border-border bg-background text-foreground hover:border-primary'
+                      ? "border-muted bg-muted text-muted-foreground"
+                      : "border-border bg-background text-foreground hover:border-primary"
                   )}
                 >
                   {isCompleted ? (
-                    <Check className='h-5 w-5' />
+                    <Check className="h-5 w-5" />
                   ) : step.icon ? (
                     step.icon
                   ) : (
                     <span>{index + 1}</span>
                   )}
                 </div>
-                <div className='ml-3 md:ml-0 md:mt-2 md:text-center'>
+                <div className="ml-3 md:ml-0 md:mt-2 md:text-center">
                   <div
                     className={cn(
-                      'text-sm font-medium',
+                      "text-sm font-medium",
                       isActive
-                        ? 'text-foreground'
+                        ? "text-foreground"
                         : isDisabled
-                        ? 'text-muted-foreground'
-                        : 'text-foreground'
+                        ? "text-muted-foreground"
+                        : "text-foreground"
                     )}
                   >
                     {step.title}
@@ -90,10 +89,10 @@ export function Stepper({
                   {step.description && (
                     <div
                       className={cn(
-                        'text-xs',
+                        "text-xs",
                         isDisabled
-                          ? 'text-muted-foreground'
-                          : 'text-muted-foreground'
+                          ? "text-muted-foreground"
+                          : "text-muted-foreground"
                       )}
                     >
                       {step.description}
@@ -104,25 +103,25 @@ export function Stepper({
               {!isLast && (
                 <div
                   className={cn(
-                    'mx-2 hidden h-[2px] flex-1 md:block',
+                    "mx-2 hidden h-[2px] flex-1 md:block",
                     isCompleted && steps[index + 1].completed
-                      ? 'bg-green-500'
+                      ? "bg-green-500"
                       : isActive || isCompleted
-                      ? 'bg-primary'
-                      : 'bg-border'
+                      ? "bg-[#0eb57b]"
+                      : "bg-border"
                   )}
                 />
               )}
               {!isLast && (
-                <div className='my-2 h-8 w-[2px] md:hidden'>
+                <div className="my-2 h-8 w-[2px] md:hidden">
                   <div
                     className={cn(
-                      'h-full w-full',
+                      "h-full w-full",
                       isCompleted && steps[index + 1].completed
-                        ? 'bg-green-500'
+                        ? "bg-green-500"
                         : isActive || isCompleted
-                        ? 'bg-primary'
-                        : 'bg-border'
+                        ? "bg-[#0eb57b]"
+                        : "bg-border"
                     )}
                   />
                 </div>

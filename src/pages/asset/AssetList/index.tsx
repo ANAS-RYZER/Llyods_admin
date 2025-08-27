@@ -94,7 +94,7 @@ const Index: React.FC = () => {
             onChange={(e) => setSearch(e.target.value)}
             className="w-[200px] h-10"
           />
-          <Button type="button" onClick={() => setOpen(true)}>
+          <Button type="button" onClick={() => setOpen(true)} className="bg-black text-white hover:bg-gray-800">
             + Add Asset
           </Button>
         </div>

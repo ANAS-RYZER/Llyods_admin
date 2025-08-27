@@ -1,39 +1,37 @@
-
-
-import * as React from 'react';
-import { cn } from '@/lib/utils';
+import * as React from "react";
+import { cn } from "@/lib/utils";
 
 const Table = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLTableElement>) => (
-  <div className='relative w-full overflow-auto'>
+  <div className="relative w-full overflow-auto">
     <table
-      className={cn('w-full caption-bottom text-sm', className)}
+      className={cn("w-full caption-bottom text-sm", className)}
       {...props}
     />
   </div>
 );
 
-Table.displayName = 'Table';
+Table.displayName = "Table";
 
 const TableHeader = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLTableSectionElement>) => (
-  <thead className={cn('[&_tr]:border-b', className)} {...props} />
+  <thead className={cn("[&_tr]:border-b", className)} {...props} />
 );
 
-TableHeader.displayName = 'TableHeader';
+TableHeader.displayName = "TableHeader";
 
 const TableBody = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLTableSectionElement>) => (
-  <tbody className={cn('[&_tr:last-child]:border-0', className)} {...props} />
+  <tbody className={cn("[&_tr:last-child]:border-0", className)} {...props} />
 );
 
-TableBody.displayName = 'TableBody';
+TableBody.displayName = "TableBody";
 
 const TableFooter = ({
   className,
@@ -41,14 +39,14 @@ const TableFooter = ({
 }: React.HTMLAttributes<HTMLTableSectionElement>) => (
   <tfoot
     className={cn(
-      'bg-primary font-medium text-primary-foreground border-t [&>tr]:last:border-b-0',
+      "bg-[#0eb57b] font-medium text-primary-foreground border-t [&>tr]:last:border-b-0",
       className
     )}
     {...props}
   />
 );
 
-TableFooter.displayName = 'TableFooter';
+TableFooter.displayName = "TableFooter";
 
 const TableRow = ({
   className,
@@ -56,14 +54,14 @@ const TableRow = ({
 }: React.HTMLAttributes<HTMLTableRowElement>) => (
   <tr
     className={cn(
-      'border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted',
+      "border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted",
       className
     )}
     {...props}
   />
 );
 
-TableRow.displayName = 'TableRow';
+TableRow.displayName = "TableRow";
 
 const TableHead = ({
   className,
@@ -71,14 +69,14 @@ const TableHead = ({
 }: React.ThHTMLAttributes<HTMLTableCellElement>) => (
   <th
     className={cn(
-      'h-10 px-2 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]',
+      "h-10 px-2 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
       className
     )}
     {...props}
   />
 );
 
-TableHead.displayName = 'TableHead';
+TableHead.displayName = "TableHead";
 
 const TableCell = ({
   className,
@@ -86,26 +84,26 @@ const TableCell = ({
 }: React.TdHTMLAttributes<HTMLTableCellElement>) => (
   <td
     className={cn(
-      'p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]',
+      "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
       className
     )}
     {...props}
   />
 );
 
-TableCell.displayName = 'TableCell';
+TableCell.displayName = "TableCell";
 
 const TableCaption = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLTableCaptionElement>) => (
   <caption
-    className={cn('mt-4 text-sm text-muted-foreground', className)}
+    className={cn("mt-4 text-sm text-muted-foreground", className)}
     {...props}
   />
 );
 
-TableCaption.displayName = 'TableCaption';
+TableCaption.displayName = "TableCaption";
 
 export {
   Table,

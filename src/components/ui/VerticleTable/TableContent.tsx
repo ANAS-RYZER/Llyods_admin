@@ -36,7 +36,7 @@ export function TableContent<T extends ContentItem>({
         <Button
           onClick={onAddItem}
           type='button'
-          className='bg-black text-white rounded-md'
+          className='bg-black text-white rounded-md hover:bg-gray-800'
         >
           <PlusCircle className='mr-2 h-4 w-4' />
           {addButtonText}

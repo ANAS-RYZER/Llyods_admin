@@ -92,22 +92,22 @@ const IncomeDistribution = () => {
         </div>
         <div className="flex justify-between  border border-gray-200 rounded-xl bg-gray-100 p-5">
           <div className="flex flex-col items-start gap-2">
-            <h1 className="text-violet-500 text-lg font-medium">
+            <h1 className="text-[#0eb57b] text-lg font-medium">
               Next Distribution
             </h1>
             <p className="text-muted-foreground flex items-center gap-1">
               {/* {property?.name || "Downtown Apartment Complex"} */}
               <Clock size={17} /> {property?.date || "June 30,2023"}
             </p>
-            <Badge className="px-2 text-xs font-semibold text-violet-500 bg-violet-100  rounded-full border border-gray-200 shadow-none hover:bg-inherit">
+            <Badge className="px-2 text-xs font-semibold text-[#0eb57b] bg-[#0eb57b]/10 rounded-full border border-gray-200 shadow-none hover:bg-inherit">
               Quarterly
             </Badge>
           </div>
-          <h1 className="text-2xl text-violet-500 font-bold">
+          <h1 className="text-2xl text-[#0eb57b] font-bold">
             ${property?.rent}
           </h1>
         </div>
-        <Button className="bg-violet-500 hover:bg-violet-700 py-6">Configure Distribution</Button>
+        <Button className="bg-[#0eb57b] hover:bg-[#0eb57b]/80 py-6">Configure Distribution</Button>
       </div>
     </div>
   );

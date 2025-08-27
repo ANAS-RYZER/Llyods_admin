@@ -30,7 +30,7 @@ const FeeInfo: React.FC = () => {
         <span className="text-gray-600 text-sm">Token Symbol Reservation fee</span>
       </div>
       <div className="flex items-center">
-        <span className="text-purple-500 mx-2"> 2000 RyzerX Tokens</span>
+        <span className="text-[#0eb57b] mx-2"> 2000 RyzerX Tokens</span>
         <button type='button' className="text-gray-400 cursor-pointer" aria-label="More information">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path

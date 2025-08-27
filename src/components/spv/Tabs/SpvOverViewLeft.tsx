@@ -84,21 +84,21 @@ const SpvOverViewLeft = () => {
           space with modern amenities and excellent transportation access.
         </p>
         <div className="grid grid-cols-3 gap-4">
-          <div className="bg-white flex items-center gap-4 p-4 rounded-lg text-violet-500 shadow-xs">
+          <div className="bg-white flex items-center gap-4 p-4 rounded-lg text-[#0eb57b] shadow-xs">
             <Layers size={20} />
             <div className="text-black">
               <h1 className="text-sm text-gray-500">Floors</h1>
               <p className="font-semibold">{spvData.floors}</p>
             </div>
           </div>
-          <div className="bg-white flex items-center gap-4 p-4 rounded-lg text-violet-500 shadow-xs">
+          <div className="bg-white flex items-center gap-4 p-4 rounded-lg text-[#0eb57b] shadow-xs">
             <Home size={20} />
             <div className="text-black">
               <h1 className="text-sm text-gray-500">Suites</h1>
               <p className="font-semibold">{spvData.suities}</p>
             </div>
           </div>
-          <div className="bg-white flex items-center gap-4 p-4 rounded-lg text-violet-500 shadow-xs">
+          <div className="bg-white flex items-center gap-4 p-4 rounded-lg text-[#0eb57b] shadow-xs">
             <Calendar size={20} />
             <div className="text-black">
               <h1 className="text-sm text-gray-500">Last Renovated</h1>
@@ -114,14 +114,14 @@ const SpvOverViewLeft = () => {
           {spvData.keyFeatures.map((feature, index) => (
             <span
               key={index}
-              className="text-violet-500 bg-white rounded-lg flex items-center shadow-xs"
+              className="text-[#0eb57b] bg-white rounded-lg flex items-center shadow-xs"
             >
               <Dot size={48} strokeWidth={3} />
               <span className="text-black font-semibold">{feature}</span>
             </span>
           ))}
         </div>
-        <p className="border border-[#EDE9FE] p-3 text-violet-500 font-semibold rounded-lg">
+        <p className="border border-[#EDE9FE] p-3 text-[#0eb57b] font-semibold rounded-lg">
           Premium property with modern amenities and excellent location value.
         </p>
       </div>

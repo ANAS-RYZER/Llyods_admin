@@ -39,7 +39,7 @@ const Index = ({ title, createdDate }: spvDashboardRoute) => {
 
           <Button
             variant="default"
-            className="bg-violet-600 hover:bg-violet-800 flex items-center gap-2"
+            className="bg-[#0eb57b] hover:bg-[#0eb57b]/80 flex items-center gap-2"
           >
             <DollarSign size={16} />
             <span>Add Funds</span>

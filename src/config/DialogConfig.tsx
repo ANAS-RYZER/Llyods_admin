@@ -1,17 +1,15 @@
-
-
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
   DialogFooter,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog';
-import { Dialog, DialogHeader } from '@/components/ui/dialog';
-import { DialogContent } from '@/components/ui/dialog';
-import React from 'react';
-import FormGenerator from '@/components/UseForm/FormGenerator';
-import { SubmitHandler } from 'react-hook-form';
-import { FormFieldConfig } from '@/components/UseForm/ControllerMap';
+} from "@/components/ui/dialog";
+import { Dialog, DialogHeader } from "@/components/ui/dialog";
+import { DialogContent } from "@/components/ui/dialog";
+import React from "react";
+import FormGenerator from "@/components/UseForm/FormGenerator";
+import { SubmitHandler } from "react-hook-form";
+import { FormFieldConfig } from "@/components/UseForm/ControllerMap";
 
 interface DialogConfigProps {
   title: string;
@@ -53,15 +51,15 @@ const DialogConfig = ({
               onSubmit={methods?.handleSubmit(handleSubmit)}
             >
               {form && FormGenerator(form)}
-              <DialogFooter className='flex justify-end w-full mt-4'>
+              <DialogFooter className="flex justify-end w-full mt-4">
                 <Button
-                  type='button'
-                  variant='outline'
+                  type="button"
+                  variant="outline"
                   onClick={() => setOpen(false)}
                 >
                   Cancel
                 </Button>
-                <Button type='submit' className='bg-primary text-white'>
+                <Button type="submit" className="bg-[#0eb57b] text-white">
                   Save
                 </Button>
               </DialogFooter>

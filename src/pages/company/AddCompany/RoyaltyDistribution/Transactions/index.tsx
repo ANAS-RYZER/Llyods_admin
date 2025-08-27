@@ -1,15 +1,13 @@
-
-
-import Loading from '@/components/ui/Loading';
+import Loading from "@/components/ui/Loading";
 import {
   Table,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table';
-import { useState } from 'react';
-import { useStatements } from '@/hooks/useStatements';
+} from "@/components/ui/table";
+import { useState } from "react";
+import { useStatements } from "@/hooks/useStatements";
 
 const Index = () => {
   const { statements, loading, fetchBasedOnPage } = useStatements();
@@ -32,7 +30,7 @@ const Index = () => {
   return (
     <div>
       <Table>
-        <TableHeader className='text-left bg-gray-50'>
+        <TableHeader className="text-left bg-gray-50">
           <TableRow>
             <TableHead>Transaction Id</TableHead>
             <TableHead>Type</TableHead>
@@ -52,12 +50,12 @@ const Index = () => {
         </TableHeader>
       </Table>
       {totalPages > 1 && (
-        <div className='flex justify-center space-x-2 mt-4'>
+        <div className="flex justify-center space-x-2 mt-4">
           <button
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
             className={`px-4 py-2 rounded-lg ${
-              currentPage === 1 ? 'bg-gray-300' : 'bg-primary text-white'
+              currentPage === 1 ? "bg-gray-300" : "bg-[#0eb57b] text-white"
             }`}
           >
             Previous
@@ -68,8 +66,8 @@ const Index = () => {
               onClick={() => handlePageChange(index + 1)}
               className={`px-4 py-2 rounded-lg ${
                 currentPage === index + 1
-                  ? 'bg-blue-500 text-white'
-                  : 'bg-gray-200'
+                  ? "bg-blue-500 text-white"
+                  : "bg-gray-200"
               }`}
             >
               {index + 1}
@@ -80,8 +78,8 @@ const Index = () => {
             disabled={currentPage === totalPages}
             className={`px-4 py-2 rounded-lg ${
               currentPage === totalPages
-                ? 'bg-gray-300'
-                : 'bg-primary text-white'
+                ? "bg-gray-300"
+                : "bg-[#0eb57b] text-white"
             }`}
           >
             Next

@@ -113,7 +113,7 @@ const Index = () => {
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold">SPV List </h1>
         <Button
-          className="flex items-center gap-2"
+          className="flex items-center gap-2 bg-black text-white hover:bg-gray-800"
           onClick={() => navigate("/add-spv")}
         >
           Add SPV

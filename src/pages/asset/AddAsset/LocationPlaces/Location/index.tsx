@@ -27,8 +27,8 @@ interface PlaceAutocompleteProps {
 
 const Index: React.FC = () => {
   const { setValue, watch } = useFormContext();
-  const latitude = watch('latitude') || 17.24892336147322;
-  const longitude = watch('longitude') || 78.03867816925049;
+  const latitude = watch('latitude') || 46.0566763;
+  const longitude = watch('longitude') || 14.4942074;
   const [markerRef, marker] = useAdvancedMarkerRef();
   const [selectedPlace, setSelectedPlace] =
     useState<google.maps.places.PlaceResult | null>(null);

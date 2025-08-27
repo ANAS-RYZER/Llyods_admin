@@ -21,9 +21,9 @@ export default function FeeManagementDashboard() {
       feeType: 'Example Fee',
       assets: '0',
       percentage: '0%',
-      amountCollected: '₹0.00',
-      balanceInEscrow: '₹0.00',
-      totalWithdrawn: '₹0.00',
+      amountCollected: '€0.00',
+      balanceInEscrow: '€0.00',
+      totalWithdrawn: '€0.00',
       actions: 'Action',    
     },
   ]
@@ -35,7 +35,7 @@ export default function FeeManagementDashboard() {
         <Card className="flex-1 bg-purple-600 text-white">
           <CardContent className="flex items-center justify-between p-4">
             <div>
-              <h2 className="text-lg font-bold">₹0.00</h2>
+              <h2 className="text-lg font-bold">€0.00</h2>
               <p>Total Collected</p>
             </div>
             <DollarSign className="h-8 w-8" />
@@ -44,7 +44,7 @@ export default function FeeManagementDashboard() {
         <Card className="flex-1 bg-orange-500 text-white">
           <CardContent className="flex items-center justify-between p-4">
             <div>
-              <h2 className="text-lg font-bold">₹0.00</h2>
+              <h2 className="text-lg font-bold">€0.00</h2>
               <p>Balance in Escrow</p>
             </div>
             <Lock className="h-8 w-8" />
@@ -53,7 +53,7 @@ export default function FeeManagementDashboard() {
         <Card className="flex-1 bg-teal-500 text-white">
           <CardContent className="flex items-center justify-between p-4">
             <div>
-              <h2 className="text-lg font-bold">₹0.00</h2>
+              <h2 className="text-lg font-bold">€0.00</h2>
               <p>Total Withdrawn</p>
             </div>
             <TrendingUp className="h-8 w-8" />
@@ -62,7 +62,7 @@ export default function FeeManagementDashboard() {
         <Card className="flex-1 bg-blue-500 text-white">
           <CardContent className="flex items-center justify-between p-4">
             <div>
-              <h2 className="text-lg font-bold">₹0.00</h2>
+              <h2 className="text-lg font-bold">€0.00</h2>
               <p>Taxes & Deduction</p>
             </div>
             <Percent className="h-8 w-8" />
@@ -111,19 +111,19 @@ export default function FeeManagementDashboard() {
             <div className="flex flex-wrap gap-4">
               <div className="flex items-center space-x-2">
                 <div className="h-4 w-4 bg-blue-500 rounded-full"></div>
-                <div>₹0.00 Platform Fee</div>
+                <div>€0.00 Platform Fee</div>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="h-4 w-4 bg-cyan-500 rounded-full"></div>
-                <div>₹0.00 Brokerage Fee</div>
+                <div>€0.00 Brokerage Fee</div>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="h-4 w-4 bg-orange-500 rounded-full"></div>
-                <div>₹0.00 Stamp duty Fee</div>
+                <div>€0.00 Stamp duty Fee</div>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="h-4 w-4 bg-pink-500 rounded-full"></div>
-                <div>₹0.00 Legal Fee</div>
+                <div>€0.00 Legal Fee</div>
               </div>
             </div>
           </CardContent>

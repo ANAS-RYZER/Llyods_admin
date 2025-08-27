@@ -10,7 +10,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Loader2, ArrowLeft, ArrowRight, Icon, RefreshCw } from "lucide-react";
+import { ChevronRight, Loader2, ArrowLeft, ArrowRight, Icon, RefreshCw, Euro } from "lucide-react";
 // import { useRouter } from "next/navigation";
 import { useFetchUserOrders } from "@/hooks/order/useFetchUserOrders";
 import { getStatusClasses } from "../helper";
@@ -100,7 +100,7 @@ export const OrdersTable = () => {
         {formatDate(order?.created_at)}
       </TableCell>
       <TableCell className="text-gray-700 font-medium">
-        ₹{order?.total_amount}
+        € {order?.total_amount}
       </TableCell>
       <TableCell className="text-gray-600 hidden lg:table-cell">
         {formatStatusText(order?.status)}
@@ -145,7 +145,7 @@ export const OrdersTable = () => {
         Order Date: {formatDate(order?.created_at)}
       </p>
       <p className="text-sm font-medium text-gray-700 mb-2">
-        Amount: ₹{order?.total_amount}
+        Amount: €{order?.total_amount}
       </p>
       <p className="text-sm text-gray-600 mb-2">
         Status Description: {order.status}

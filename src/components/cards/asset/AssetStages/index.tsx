@@ -6,6 +6,7 @@ import {
   BarChart,
   Link,
   ArrowRightIcon,
+  Euro,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ASSET_STEPS_TABS } from "@/constants/global";
@@ -138,7 +139,7 @@ export default function AssetStages({
 
   const assetData = useMemo(() => {
     const data = { ...asset, ...formData };
-      // console.log(data?.rentalYield, 'asasa')
+    // console.log(data?.rentalYield, 'asasa')
 
     return {
       assetId: data._id || data.id || "******",
@@ -218,12 +219,21 @@ export default function AssetStages({
             <FormField
               label="Price Per Token"
               value={
-                typeof assetData.pricePerToken === "number"
-                  ? `₹${assetData.pricePerToken.toLocaleString()}`
-                  : assetData.pricePerToken
+                typeof assetData.pricePerToken === "number" ? (
+                  <span className="flex items-center gap-1">
+                    <Euro size={12} />
+                    {assetData.pricePerToken.toLocaleString("en-US", {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
+                    })}
+                  </span>
+                ) : (
+                  assetData.pricePerToken
+                )
               }
               icon={<Info className="w-4 h-4" />}
             />
+
             <FormField
               label="Total Supply"
               value={
@@ -236,21 +246,39 @@ export default function AssetStages({
             <FormField
               label="Investment Value"
               value={
-                typeof assetData.investmentValue === "number"
-                  ? `₹${assetData.investmentValue.toLocaleString()}`
-                  : assetData.investmentValue
+                typeof assetData.investmentValue === "number" ? (
+                  <span className="flex items-center gap-1">
+                    <Euro size={12} />
+                    {assetData.investmentValue.toLocaleString("en-US", {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
+                    })}
+                  </span>
+                ) : (
+                  assetData.investmentValue
+                )
               }
-              icon={<DollarSign className="w-4 h-4" />}
+              icon={<Euro className="w-4 h-4" />}
             />
+
             <FormField
               label="Expected Income"
               value={
-                typeof assetData.expectedIncome === "number"
-                  ? `₹${assetData.expectedIncome.toLocaleString()}`
-                  : assetData.expectedIncome
+                typeof assetData.expectedIncome === "number" ? (
+                  <span className="flex items-center gap-1">
+                    <Euro size={12} />
+                    {assetData.expectedIncome.toLocaleString("en-US", {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
+                    })}
+                  </span>
+                ) : (
+                  assetData.expectedIncome
+                )
               }
-              icon={<DollarSign className="w-4 h-4" />}
+              icon={<Euro className="w-4 h-4" />}
             />
+
             <FormField
               label="Expected ROI"
               value={

@@ -74,7 +74,7 @@ export function Details({ order }: { order: any }) {
               </h3>
             </div>
             <div className="bg-blue-100 w-10 h-10 flex items-center justify-center rounded-full text-2xl text-amber-600">
-              {currency === "usd" ? "$" : "₹"}
+              €
             </div>
           </CardContent>
         </Card>
@@ -102,7 +102,7 @@ export function Details({ order }: { order: any }) {
               </h3>
             </div>
             <div className="bg-blue-100 w-10 h-10 flex items-center justify-center rounded-full text-2xl text-amber-600">
-              {currency === "usd" ? "$" : "₹"}
+              €
             </div>
           </CardContent>
         </Card>
@@ -126,13 +126,13 @@ export function Details({ order }: { order: any }) {
               <div className="flex items-center gap-3">
                 <span className="text-gray-600">
                   <span className="text-2xl font-light mr-2 text-gray-400">
-                    {currency === "usd" ? "$" : "₹"}
+                    €
                   </span>{" "}
                   Order Value
                 </span>
               </div>
               <span className="font-semibold">
-                {currency === "usd" ? "$" : "₹"} {totalOrderValue}
+                € {totalOrderValue}
               </span>
             </div>
 

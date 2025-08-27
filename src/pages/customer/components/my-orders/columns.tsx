@@ -62,7 +62,7 @@ export const columns: ColumnDef<Order>[] = [
     },
     cell: ({ row }) => {
       const amount = row.getValue("amount") as number
-      return <span>₹ {amount.toLocaleString('en-IN')}</span>
+      return <span>€ {amount.toLocaleString('en-US')}</span>
     },
   },
   {

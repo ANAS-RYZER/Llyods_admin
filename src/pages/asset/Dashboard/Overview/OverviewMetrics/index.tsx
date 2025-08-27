@@ -6,6 +6,7 @@ import {
   Users,
   Building,
   PercentCircle,
+  Euro,
 } from "lucide-react";
 import React from "react";
 
@@ -58,7 +59,7 @@ export function OverviewMetrics({
     {
       icon: (
         <div className="w-4 h-4 flex items-center justify-center text-xl text-amber-600">
-          {currency === "USD" ? "$" : "₹"}
+          <Euro className="h-5 w-5" />
         </div>
       ),
       title: "Total Raised",

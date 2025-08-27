@@ -45,7 +45,7 @@ export default function InvestorsActivity({ investorsData }: { investorsData: an
 
                         <div className="flex items-center">
                             <div className="text-right mr-4">
-                                <p className="font-medium">${investor.investment.toLocaleString()}</p>
+                                <p className="font-medium">€{investor.investment.toLocaleString()}</p>
                                 <p className="text-sm text-gray-500">{investor.percentage}%</p>
                             </div>
                             <Button variant="ghost" size="icon" className="h-8 w-8">

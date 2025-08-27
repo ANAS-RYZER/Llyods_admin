@@ -37,7 +37,7 @@ const Asset = ({ properties }: { properties: any[] }) => {
                                     <div className="grid grid-cols-2 gap-4 mt-4">
                                         <div>
                                             <p className="text-xs text-gray-500">Monthly Income</p>
-                                            <p className="font-semibold">${property.monthlyIncome.toLocaleString()}</p>
+                                            <p className="font-semibold">€{property.monthlyIncome.toLocaleString()}</p>
                                         </div>
                                         <div>
                                             <p className="text-xs text-gray-500">Last Distribution</p>

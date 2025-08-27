@@ -1,4 +1,4 @@
-import { Building, DollarSign, PercentCircle, MapPin } from "lucide-react";
+import { Building, Euro, PercentCircle, MapPin } from "lucide-react";
 
 export function PropertyDetails({ assetOverview }: { assetOverview: any }) {
   const name = assetOverview?.name ?? "Unnamed";
@@ -12,7 +12,7 @@ export function PropertyDetails({ assetOverview }: { assetOverview: any }) {
   const category = assetOverview?.category ?? "Unknown category";
   const latitude = assetOverview?.latitude ?? 0;
   const longitude = assetOverview?.longitude ?? 0;
-  const currency = assetOverview?.currency ?? "USD";
+  const currency = assetOverview?.currency ?? "EUR";
 
   return (
     <div className="bg-white p-6 rounded-lg border border-gray-200">
@@ -55,7 +55,7 @@ export function PropertyDetails({ assetOverview }: { assetOverview: any }) {
       <div className="flex gap-6">
         <div className="flex items-start">
           <div className="bg-blue-100 w-10 h-10 flex items-center justify-center rounded-full text-2xl text-amber-600">
-            {currency === "USD" ? "$" : "₹"}
+            €
           </div>{" "}
           <div className="ml-2">
             <div className="text-sm text-gray-500">Monthly Income</div>

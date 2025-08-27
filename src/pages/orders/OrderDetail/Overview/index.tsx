@@ -52,7 +52,7 @@ const InfoRow = ({
     <span className="text-gray-600">{label}</span>
     <span className="font-medium">
       {typeof value === "number"
-        ? `${currency === "usd" ? "$" : "₹"} ${value}`
+        ? `€ ${value}`
         : value ?? "N/A"}
     </span>
   </div>
@@ -129,7 +129,7 @@ export default function OrderDetailsPage({ order }: { order: Order }) {
             <div className="flex justify-between items-center mb-6">
               <span className="text-gray-600">Total:</span>
               <span className="text-xl font-semibold">
-                {currency === "usd" ? "$" : "₹"} {totalOrderValue}
+                € {totalOrderValue}
               </span>
             </div>
 

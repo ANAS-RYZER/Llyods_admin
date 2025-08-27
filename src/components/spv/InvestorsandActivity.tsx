@@ -61,7 +61,7 @@ const InvestorsandActivity = () => {
                 </div>
                 <div className="flex flex-col items-end">
                   <h1 className="text-md font-medium">
-                    ${investor.investment}
+                    €{investor.investment}
                   </h1>
                   <p className="text-sm text-muted-foreground">
                     {investor.percentage}%

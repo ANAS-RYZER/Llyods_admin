@@ -132,7 +132,7 @@ const TransactionsData = ({escrowId}:{escrowId:string}) => {
                         </TableCell>
                         <TableCell className='py-4'>
                           <span className='font-medium text-gray-900'>
-                            ₹ {payment?.amount}
+                            € {payment?.amount}
                           </span>
                         </TableCell>
                         <TableCell className='py-4'>

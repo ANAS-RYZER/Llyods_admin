@@ -16,7 +16,7 @@ const Exepenses = ({
   expenses?: number | string;
   currency?: string;
 }) => {
-  const currencySymbol = currency === "inr" ? "₹" : "$";
+  const currencySymbol = "€";
   return (
     <div className='bg-white flex flex-col rounded-lg shadow-sm border border-gray-200 overflow-hidden  transition-all duration-300'>
       <div className='flex justify-between items-center w-full p-4 bg-gradient-to-r from-slate-800 to-slate-900 text-white'>

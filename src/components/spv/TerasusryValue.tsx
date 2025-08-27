@@ -40,7 +40,7 @@ const TerasusryValue = ({title, blockChain, value}: propertyDataProps) => {
           </div>
           <div>
             <p className="text-sm text-gray-600">{title}</p>
-            <h1 className="text-2xl font-bold">$ {value}</h1>
+            <h1 className="text-2xl font-bold">€ {value}</h1>
           </div>
         </div>
         <div className="w-full flex gap-2 mt-2">

@@ -1,4 +1,4 @@
-import { Clock, DollarSign } from "lucide-react";
+import { Clock, Euro } from "lucide-react";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
 
@@ -6,9 +6,9 @@ function calculateNetIncome(property: any) {
   const rent = property.rent;
   const maintenance = 0.1;
   const propertyManagement = 0.05;
-    const platformFee = 0.02;
+  const platformFee = 0.02;
 
-    const maintenanceCost = rent * maintenance;
+  const maintenanceCost = rent * maintenance;
   const propertyManagementCost = rent * propertyManagement;
   const platformFeeCost = rent * platformFee;
 
@@ -41,7 +41,7 @@ const IncomeDistribution = () => {
     <div className="flex-1 shadow-md pb-5 rounded-xl">
       <div className="flex justify-between bg-gradient-to-r from-blue-100 to-blue-50 rounded-t-2xl px-4 py-5 border-b">
         <h1 className="text-lg font-medium flex items-center">
-          <DollarSign className="text-green-500 mr-5 p-1 bg-green-200 rounded-full h-10" />
+          <Euro className="text-green-500 mr-5 p-1 bg-green-200 rounded-full h-10" />
           Income & Distribution
         </h1>
         <Button variant="link" className="text-green-500">
@@ -61,7 +61,7 @@ const IncomeDistribution = () => {
             </p>
           </div>
           <h1 className="text-2xl text-green-500 font-bold">
-            ${property?.rent}
+            €{property?.rent}
           </h1>
         </div>
       </div>
@@ -70,25 +70,25 @@ const IncomeDistribution = () => {
         <div className="flex justify-between">
           <p className="text-gray-600 font-normal">Maintenance Reserve (10%)</p>
           <p className="text-red-600 font-medium">
-            -${expenses.maintenance.toFixed(0)}
+            -€{expenses.maintenance.toFixed(0)}
           </p>
         </div>
         <div className="flex justify-between">
           <p className="text-gray-600 font-normal">Property Management (5%)</p>
           <p className="text-red-600 font-medium">
-            -${expenses.propertyManagement.toFixed(0)}
+            -€{expenses.propertyManagement.toFixed(0)}
           </p>
         </div>
         <div className="flex justify-between">
           <p className="text-gray-600 font-normal">Platform Fee (2%)</p>
           <p className="text-red-600 font-medium">
-            -${expenses.platformFee.toFixed(0)}
+            -€{expenses.platformFee.toFixed(0)}
           </p>
         </div>
         <hr className="h-3" />
         <div className="flex justify-between">
           <p className="text-lg font-semibold">Net Distributable Income</p>
-          <p className="text-xl font-bold">${netIncome}</p>
+          <p className="text-xl font-bold">€{netIncome}</p>
         </div>
         <div className="flex justify-between  border border-gray-200 rounded-xl bg-gray-100 p-5">
           <div className="flex flex-col items-start gap-2">
@@ -104,10 +104,12 @@ const IncomeDistribution = () => {
             </Badge>
           </div>
           <h1 className="text-2xl text-[#0eb57b] font-bold">
-            ${property?.rent}
+            €{property?.rent}
           </h1>
         </div>
-        <Button className="bg-[#0eb57b] hover:bg-[#0eb57b]/80 py-6">Configure Distribution</Button>
+        <Button className="bg-[#0eb57b] hover:bg-[#0eb57b]/80 py-6">
+          Configure Distribution
+        </Button>
       </div>
     </div>
   );

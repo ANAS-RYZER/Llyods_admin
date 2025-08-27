@@ -6,7 +6,7 @@ import {
   EditIcon,
   DownloadIcon,
   UserPlusIcon,
-  DollarSignIcon,
+  EuroIcon,
   CoinsIcon,
   Calendar,
   Eye,
@@ -56,11 +56,11 @@ const Investor = () => {
       accessorKey: "investment",
       cell: ({ row }: { row: { getValue: (key: string) => any } }) => {
         const value = row.getValue("investment");
-        const currency = value?.currency || "USD";
+        const currency = value?.currency || "EUR";
         return (
           <div className="flex items-center gap-2">
             <div className="w-10 h-10 flex items-center justify-center rounded-full text-2xl text-amber-600">
-              {currency === "usd" ? "$" : "₹"}
+              €
             </div>{" "}
             <span>{value}</span>
           </div>

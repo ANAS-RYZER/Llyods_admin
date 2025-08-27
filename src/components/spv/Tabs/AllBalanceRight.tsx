@@ -5,17 +5,17 @@ import { ArrowUpRight } from 'lucide-react'
 const rawAssets = [
   {
     name: 'Ryzer Token (RYZ)',
-    amount: '$430,090',
+    amount: '€430,090',
     color: 'bg-purple-500 text-purple-600',
   },
   {
     name: 'Ethereum (ETH)',
-    amount: '$225,810',
+    amount: '€225,810',
     color: 'bg-blue-500 text-blue-600',
   },
   {
     name: 'Tether (USDT)',
-    amount: '$175,000',
+    amount: '€175,000',
     color: 'bg-green-500 text-green-600',
   },
 ]

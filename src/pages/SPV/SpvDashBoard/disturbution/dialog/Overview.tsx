@@ -22,7 +22,7 @@ const Overview = ({distributionName, totalAmount, distributionDate, selectedInve
                   <div>{distributionName}</div>
 
                   <div className="text-gray-700 font-medium">Total Amount:</div>
-                  <div>${totalAmount}</div>
+                  <div>€{totalAmount}</div>
 
                   <div className="text-gray-700 font-medium">Distribution Date:</div>
                   <div>{distributionDate}</div>

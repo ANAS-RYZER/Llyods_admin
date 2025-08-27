@@ -3,7 +3,7 @@ import TableComponent from "@/components/TableComponent";
 import {
   EditIcon,
   DownloadIcon,
-  DollarSignIcon,
+  EuroIcon,
   CoinsIcon,
   CheckCircle,
   CircleAlert,
@@ -48,11 +48,11 @@ const Order = () => {
       accessorKey: "amount",
       cell: ({ row }: { row: { getValue: (key: string) => any } }) => {
         const value = row.getValue("amount");
-        const currency = value?.currency || "usd";
+        const currency = value?.currency || "EUR";
         return (
           <div className="flex items-center gap-2">
             <div className="w-10 h-10 flex items-center justify-center rounded-full text-2xl text-amber-600">
-              {currency === "usd" ? "$" : "₹"}
+              €
             </div>{" "}
             <span>{value}</span>
           </div>

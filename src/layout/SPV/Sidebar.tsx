@@ -5,7 +5,7 @@ import {
   Users,
   FileText,
   ShieldCheck,
-  DollarSign,
+  Euro,
   Settings,
   BarChart,
 } from "lucide-react";
@@ -86,7 +86,7 @@ export default function Sidebar() {
         />
 
         <NavItem
-          icon={<DollarSign className="w-5 h-5" />}
+          icon={<Euro className="w-5 h-5" />}
           label="Distribution"
           href="disturbution"
         />

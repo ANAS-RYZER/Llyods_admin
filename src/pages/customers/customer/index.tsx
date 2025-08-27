@@ -13,22 +13,18 @@ import useTrackCustomerData from "@/hooks/customer/useTrackCustomerData";
 import {
   Check,
   CircleCheckBig,
-  DollarSign,
+  Euro,
   ShieldAlert,
   ThumbsUp,
 } from "lucide-react";
 
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@radix-ui/react-tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 
 const CustomerDetailPage = () => {
   const { id: userId } = useParams();
 
-  const { loading, error, customerData, fetchCustomerData } = useTrackCustomerData();
+  const { loading, error, customerData, fetchCustomerData } =
+    useTrackCustomerData();
 
   useEffect(() => {
     if (userId) {
@@ -36,19 +32,26 @@ const CustomerDetailPage = () => {
     }
   }, [userId]);
 
-  if (loading) return <p className="text-center mt-10">Loading customer data...</p>;
-  if (error) return <p className="text-red-500 mt-10 text-center">Failed to load data</p>;
+  if (loading)
+    return <p className="text-center mt-10">Loading customer data...</p>;
+  if (error)
+    return (
+      <p className="text-red-500 mt-10 text-center">Failed to load data</p>
+    );
 
   if (!customerData) return null;
-  const { Current_Application, SCORE, CAIS_Account } = customerData.neokredFinancialData.data;
+  const { Current_Application, SCORE, CAIS_Account } =
+    customerData.neokredFinancialData.data;
   const userDetails = Current_Application?.Current_Application_Details;
-  const id = customerData?._id
-  console.log(id,"uiu")
-
+  const id = customerData?._id;
+  console.log(id, "uiu");
 
   return (
     <div className="p-6">
-      <Header userDetails={userDetails?.Current_Applicant_Details} customer={id} />
+      <Header
+        userDetails={userDetails?.Current_Applicant_Details}
+        customer={id}
+      />
       <AdminApproval
         AdminApprovalStatus={customerData?.adminApprovalStatus}
         userId={userId as string}
@@ -70,25 +73,31 @@ const CustomerDetailPage = () => {
         /> */}
         <CreditScoreConfig
           title="Out Standing"
-          value={CAIS_Account?.CAIS_Summary?.Total_Outstanding_Balance?.Outstanding_Balance_All || "N/A"}
-          Icon={DollarSign}
+          value={
+            CAIS_Account?.CAIS_Summary?.Total_Outstanding_Balance
+              ?.Outstanding_Balance_All || "N/A"
+          }
+          Icon={Euro}
           color="blue"
         />
         <CreditScoreConfig
           title="Admin Approval"
-          value={customerData?.adminApprovalStatus?.adminApprovalStatus || "N/A"}
+          value={
+            customerData?.adminApprovalStatus?.adminApprovalStatus || "N/A"
+          }
           Icon={
-            customerData?.adminApprovalStatus?.adminApprovalStatus?.toLowerCase() === "pending"
+            customerData?.adminApprovalStatus?.adminApprovalStatus?.toLowerCase() ===
+            "pending"
               ? ShieldAlert
               : Check
           }
           color={
-            customerData?.adminApprovalStatus?.adminApprovalStatus?.toLowerCase() === "pending"
+            customerData?.adminApprovalStatus?.adminApprovalStatus?.toLowerCase() ===
+            "pending"
               ? "red"
               : "green"
           }
         />
-
       </div>
 
       <Tabs defaultValue="basic_details" className="mt-8">

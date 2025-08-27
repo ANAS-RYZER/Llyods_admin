@@ -85,7 +85,7 @@ const Index = () => {
       accessorKey: "totalOrderValue",
       cell: ({ row }: { row: any }) => {
         const { currency, totalOrderValue } = row.original;
-        const currencySymbol = currency?.toLowerCase() === "usd" ? "$" : "₹";
+        const currencySymbol = "€";
         return (
           <div className="flex items-center gap-1">
             <span className="text-sm font-light">{currencySymbol}</span>

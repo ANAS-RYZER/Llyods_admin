@@ -195,11 +195,11 @@ const Index = ({ assetOverview }: { assetOverview: any }) => {
     <div className="space-y-4">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <StatCard title="Total Investors" value={numberOfInvestors} />
-        <StatCard title="Total Revenue" value={totalRaised} prefix="$" />
+        <StatCard title="Total Revenue" value={totalRaised} prefix="€" />
         <StatCard
           title="Average Order Value"
           value={averageInvestment?.toFixed(2)}
-          prefix="$"
+          prefix="€"
         />
       </div>
       <div className="flex items-center justify-between">

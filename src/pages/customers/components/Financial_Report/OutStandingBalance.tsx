@@ -1,4 +1,4 @@
-import { DollarSign, Wallet } from "lucide-react";
+import { Euro, Wallet } from "lucide-react";
 import { PieChart } from "../Charts_Graphs/PieChart";
 
 const OutStandingbalance = ({ balances }: any) => {
@@ -8,7 +8,7 @@ const OutStandingbalance = ({ balances }: any) => {
     Outstanding_Balance_UnSecured: UnSecured,
   } = balances;
 
-  console.log(Outstanding_Balance_All, Secured , UnSecured , "Balance")
+  console.log(Outstanding_Balance_All, Secured, UnSecured, "Balance");
 
   return (
     <div className="space-y-4 border border-gray-200 p-5 mt-4 rounded-md bg-white shadow-sm">
@@ -32,7 +32,7 @@ const OutStandingbalance = ({ balances }: any) => {
         <div className=" flex flex-col items-center rounded-xl py-4">
           <p className="text-sm text-gray-500">Total Outstanding</p>
           <h1 className="text-black font-bold text-2xl flex items-center gap-2 ">
-            {/* <DollarSign color="#7758f5" size={20} /> */}₹{" "}
+            {/* <Euro color="#7758f5" size={20} /> */}€{" "}
             {/* {Secured + UnSecured} */}
             {Outstanding_Balance_All}
           </h1>
@@ -41,11 +41,11 @@ const OutStandingbalance = ({ balances }: any) => {
         <div className="flex justify-around w-full">
           <div className=" flex flex-col items-center rounded-xl py-4">
             <p className="text-sm text-gray-500">Secured</p>
-            <h1 className=" font-bold text-2xl  ">₹ {Secured}</h1>
+            <h1 className=" font-bold text-2xl  ">€ {Secured}</h1>
           </div>
           <div className=" flex flex-col items-center rounded-xl py-4">
             <p className="text-sm text-gray-500">Unsecured</p>
-            <h1 className=" font-bold text-2xl  ">₹ {UnSecured}</h1>
+            <h1 className=" font-bold text-2xl  ">€ {UnSecured}</h1>
           </div>
         </div>
       </div>

@@ -32,12 +32,12 @@ const Exepenses = ({
           <div className='flex flex-col items-start p-3  rounded-md flex-1'>
             <h1 className='text-sm text-gray-500 mb-1'>Gross Rent</h1>
             <span className='text-lg font-semibold text-slate-800'>
-              {currencySymbol} {grossRent}
+              € {grossRent}
             </span>
           </div>
           <div className='flex flex-col items-start p-3  rounded-md flex-1'>
             <h1 className='text-sm text-gray-500 mb-1'>Expenses</h1>
-            <span className='text-lg font-bold '>{currencySymbol} {expenses}</span>
+            <span className='text-lg font-bold '>€ {expenses}</span>
           </div>
         </div>
 

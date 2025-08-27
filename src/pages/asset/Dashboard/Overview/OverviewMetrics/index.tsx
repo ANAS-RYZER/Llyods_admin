@@ -52,7 +52,7 @@ export function OverviewMetrics({
   const raiseProgress = totalPropertyValueAfterFees
     ? (totalRaised / totalPropertyValueAfterFees) * 100
     : 0;
-  const currency = assetOverview?.currency ?? "USD";
+  const currency = assetOverview?.currency ?? "EUR";
 
   const metrics: Metric[] = [
     {

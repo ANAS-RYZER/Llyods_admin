@@ -12,7 +12,7 @@ export function PropertyDetails({ assetOverview }: { assetOverview: any }) {
   const category = assetOverview?.category ?? "Unknown category";
   const latitude = assetOverview?.latitude ?? 0;
   const longitude = assetOverview?.longitude ?? 0;
-  const currency = assetOverview?.currency ?? "USD";
+  const currency = assetOverview?.currency ?? "EUR";
 
   return (
     <div className="bg-white p-6 rounded-lg border border-gray-200">

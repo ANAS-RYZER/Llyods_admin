@@ -5,7 +5,7 @@ import SpvOverviewTabs from "@/components/spv/SpvTabs";
 import SpvProperty from "@/components/spv/SpvProperty";
 import TerasusryValue from "@/components/spv/TerasusryValue";
 import { Button } from "@/components/ui/button";
-import { DollarSign, Ellipsis } from "lucide-react";
+import { Euro, Ellipsis } from "lucide-react";
 import SpvTabs from "@/components/spv/SpvTabs";
 import TeasureAllocation from "@/components/spv/TeasureAllocation";
 import SpvteasureTabs from "@/components/spv/SpvteasureTabs";
@@ -41,7 +41,7 @@ const Index = ({ title, createdDate }: spvDashboardRoute) => {
             variant="default"
             className="bg-[#0eb57b] hover:bg-[#0eb57b]/80 flex items-center gap-2"
           >
-            <DollarSign size={16} />
+            <Euro size={16} />
             <span>Add Funds</span>
           </Button>
         </div>

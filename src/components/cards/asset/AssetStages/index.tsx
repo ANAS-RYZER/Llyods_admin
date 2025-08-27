@@ -2,7 +2,6 @@ import { useMemo } from "react";
 import {
   Check,
   Info,
-  DollarSign,
   BarChart,
   Link,
   ArrowRightIcon,

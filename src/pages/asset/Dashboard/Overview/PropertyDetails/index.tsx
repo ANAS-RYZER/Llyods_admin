@@ -1,4 +1,4 @@
-import { Building, DollarSign, PercentCircle, MapPin } from "lucide-react";
+import { Building, Euro, PercentCircle, MapPin } from "lucide-react";
 
 export function PropertyDetails({ assetOverview }: { assetOverview: any }) {
   const name = assetOverview?.name ?? "Unnamed";

@@ -1,32 +1,43 @@
-
-
-import TableComponent from "@/components/TableComponent"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { DollarSign, Lock, Percent, TrendingUp } from "lucide-react"
+import TableComponent from "@/components/TableComponent";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Euro, Lock, Percent, TrendingUp } from "lucide-react";
 
 export default function FeeManagementDashboard() {
   const columns = [
-    { header: 'Fee Type', accessorKey: 'feeType' },
-    { header: 'Assets', accessorKey: 'assets' },
-    { header: 'Percentage(%)', accessorKey: 'percentage' },
-    { header: 'Amount Collected', accessorKey: 'amountCollected' },
-    { header: 'Balance in Escrow', accessorKey: 'balanceInEscrow' }, 
-    { header: 'Total Withdrawn (Gross)', accessorKey: 'totalWithdrawn' },
-    { header: 'Actions', accessorKey: 'actions' },
-  ]
+    { header: "Fee Type", accessorKey: "feeType" },
+    { header: "Assets", accessorKey: "assets" },
+    { header: "Percentage(%)", accessorKey: "percentage" },
+    { header: "Amount Collected", accessorKey: "amountCollected" },
+    { header: "Balance in Escrow", accessorKey: "balanceInEscrow" },
+    { header: "Total Withdrawn (Gross)", accessorKey: "totalWithdrawn" },
+    { header: "Actions", accessorKey: "actions" },
+  ];
   const data = [
     {
-      feeType: 'Example Fee',
-      assets: '0',
-      percentage: '0%',
-      amountCollected: '€0.00',
-      balanceInEscrow: '€0.00',
-      totalWithdrawn: '€0.00',
-      actions: 'Action',    
+      feeType: "Example Fee",
+      assets: "0",
+      percentage: "0%",
+      amountCollected: "€0.00",
+      balanceInEscrow: "€0.00",
+      totalWithdrawn: "€0.00",
+      actions: "Action",
     },
-  ]
+  ];
 
   return (
     <div className="container mx-auto p-6 space-y-6">
@@ -38,7 +49,7 @@ export default function FeeManagementDashboard() {
               <h2 className="text-lg font-bold">€0.00</h2>
               <p>Total Collected</p>
             </div>
-            <DollarSign className="h-8 w-8" />
+            <Euro className="h-8 w-8" />
           </CardContent>
         </Card>
         <Card className="flex-1 bg-orange-500 text-white">
@@ -130,14 +141,8 @@ export default function FeeManagementDashboard() {
         </Card>
       </div>
       <div className="border border-gray-200 rounded-md">
-
-      <TableComponent
-        columns={columns}
-        data={data}
-      
-      />
+        <TableComponent columns={columns} data={data} />
       </div>
     </div>
-  )
+  );
 }
-

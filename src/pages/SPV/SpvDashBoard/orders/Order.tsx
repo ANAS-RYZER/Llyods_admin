@@ -3,7 +3,7 @@ import TableComponent from "@/components/TableComponent";
 import {
   EditIcon,
   DownloadIcon,
-  DollarSignIcon,
+  EuroIcon,
   CoinsIcon,
   CheckCircle,
   CircleAlert,

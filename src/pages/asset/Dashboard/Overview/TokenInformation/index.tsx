@@ -35,8 +35,8 @@ export function TokenInformation({
     {
       icon: <Info className="h-4 w-4 text-purple-500" />,
       title: "Token Price",
-      value: tokenPrice ? `$${tokenPrice.toFixed(2)}` : "N/A",
-      subtitle: "Price per token in USD",
+      value: tokenPrice ? `€${tokenPrice.toFixed(2)}` : "N/A",
+      subtitle: "Price per token in EUR",
     },
     {
       icon: <TrendingUp className="h-4 w-4 text-yellow-500" />,

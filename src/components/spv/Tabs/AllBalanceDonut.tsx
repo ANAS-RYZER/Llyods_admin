@@ -13,7 +13,7 @@ const renderCenterText = () => {
   return (
     <foreignObject x="35%" y="42%" width="30%" height="20%">
       <div className="flex flex-col items-center justify-center text-center text-sm font-semibold text-gray-700">
-        <div className="text-2xl font-bold text-black">$830,900</div>
+        <div className="text-2xl font-bold text-black">€830,900</div>
         <div className="text-sm text-gray-500">Total Value</div>
       </div>
     </foreignObject>

@@ -1,4 +1,4 @@
-import { DollarSign, TrendingUp, Wallet } from "lucide-react";
+import { Euro, TrendingUp, Wallet } from "lucide-react";
 import { PieChart } from "../Charts_Graphs/PieChart";
 import { PieDonutChart } from "../Charts_Graphs/PieChartDonut";
 

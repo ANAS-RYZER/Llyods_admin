@@ -5,12 +5,11 @@ import {
   EditIcon,
   DownloadIcon,
   UserPlusIcon,
-  DollarSignIcon,
+  EuroIcon,
   CoinsIcon,
   Upload,
   Eye,
   SquarePen,
-  
   CheckCircle,
   CircleAlert,
 } from "lucide-react";
@@ -20,7 +19,7 @@ import { data } from "./data";
 import clsx from "clsx";
 import { Badge } from "@/components/ui/badge";
 const Investor = () => {
- const columns = [
+  const columns = [
     {
       header: "Document",
       accessorKey: "document",

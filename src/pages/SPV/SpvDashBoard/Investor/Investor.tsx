@@ -6,7 +6,7 @@ import {
   EditIcon,
   DownloadIcon,
   UserPlusIcon,
-  DollarSignIcon,
+  EuroIcon,
   CoinsIcon,
   Calendar,
   Eye,

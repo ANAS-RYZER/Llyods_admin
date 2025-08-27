@@ -1,4 +1,10 @@
-import { Building, Building2, Coins, DollarSignIcon, MoveUpRight } from "lucide-react";
+import {
+  Building,
+  Building2,
+  Coins,
+  EuroIcon,
+  MoveUpRight,
+} from "lucide-react";
 import React from "react";
 
 type propertyDataProps = {
@@ -6,11 +12,7 @@ type propertyDataProps = {
 
   value?: number;
 };
-const PropertyValue = ({
-  title,
-  value,
-
-}: propertyDataProps) => {
+const PropertyValue = ({ title, value }: propertyDataProps) => {
   return (
     // <div>
     //      <div className="flex h-[155px] border border-gray-200 rounded-lg p-4 flex-col">
@@ -35,7 +37,7 @@ const PropertyValue = ({
           </div>
           <div>
             <p className="text-sm text-gray-600">{title}</p>
-            <h1 className="text-2xl font-bold">$ {value}</h1>
+            <h1 className="text-2xl font-bold"> {value}</h1>
           </div>
         </div>
         <div className="text-xs w-40 bg-green-50 text-green-600 font-medium mt-1 flex items-center p-1 gap-1 rounded-md">

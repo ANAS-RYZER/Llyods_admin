@@ -1,19 +1,19 @@
 import { Button } from "@/components/ui/button";
-import {ArrowUp,CircleAlert,DollarSignIcon,Filter,} from "lucide-react";
+import { ArrowUp, CircleAlert, EuroIcon, Filter } from "lucide-react";
 const financialOverviewData = [
   {
     title: "Monthly Revenue",
-    value: "$125,000",
+    value: "€125,000",
     change: "+5.2%",
   },
   {
     title: "Monthly Expenses",
-    value: "$45,000",
+    value: "€45,000",
     change: "-2.1%",
   },
   {
     title: "Net Operating Income",
-    value: "$80,000",
+    value: "€80,000",
     change: "+8.4%",
   },
   {
@@ -40,7 +40,7 @@ const linkedAssetsData = [
   },
   {
     title: "Total Value",
-    value: "$23.25M",
+    value: "€23.25M",
   },
   {
     title: "Avg ROI",
@@ -54,14 +54,22 @@ type SpvOverViewRightProps = {
   fundingTarget?: number;
 };
 
-const SpvOverViewRight = ({title,currentFunding = 0,fundingTarget = 0,}: SpvOverViewRightProps) => {
-  const progressPercentage = fundingTarget > 0 ? (currentFunding / fundingTarget) * 100 : 0;
+const SpvOverViewRight = ({
+  title,
+  currentFunding = 0,
+  fundingTarget = 0,
+}: SpvOverViewRightProps) => {
+  const progressPercentage =
+    fundingTarget > 0 ? (currentFunding / fundingTarget) * 100 : 0;
 
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between p-4">
         <h1 className="text-xl font-semibold">Key Performance Indicators</h1>
-        <Button variant="default" className="bg-white text-black hover:bg-gray-100">
+        <Button
+          variant="default"
+          className="bg-white text-black hover:bg-gray-100"
+        >
           <Filter />
           Filter
         </Button>
@@ -89,7 +97,10 @@ const SpvOverViewRight = ({title,currentFunding = 0,fundingTarget = 0,}: SpvOver
         <h1 className="font-semibold text-xl">Linked Assets Summary</h1>
         <div className="flex justify-between">
           {linkedAssetsData.map((item, idx) => (
-            <div key={idx} className="flex flex-col justify-center items-center bg-gray-50 rounded-lg p-4 gap-2">
+            <div
+              key={idx}
+              className="flex flex-col justify-center items-center bg-gray-50 rounded-lg p-4 gap-2"
+            >
               <span className="text-2xl font-bold">{item.value}</span>
               <span className="text-sm text-gray-500">{item.title}</span>
             </div>
@@ -101,12 +112,12 @@ const SpvOverViewRight = ({title,currentFunding = 0,fundingTarget = 0,}: SpvOver
         <div className="border bg-gradient-to-r from-[#F9FAFB] to-[#EEF2FF] rounded-xl flex flex-col gap-4 p-4">
           <div className="flex gap-3 items-center">
             <div className="p-2 bg-gray-100 rounded-full">
-              <DollarSignIcon className="text-purple-600" />
+              <EuroIcon className="text-purple-600" />
             </div>
             <div>
               <p className="text-sm text-gray-600">{title}</p>
               <div className="flex items-center gap-2">
-                <h1 className="text-2xl font-bold">${currentFunding}</h1>
+                <h1 className="text-2xl font-bold">€{currentFunding}</h1>
                 <p className="text-sm text-green-500 flex items-center font-semibold">
                   <ArrowUp size={14} />
                   +5.2% YoY

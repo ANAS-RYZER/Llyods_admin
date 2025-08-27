@@ -1,4 +1,4 @@
-import { Building, Calendar, DollarSign, Link, Percent } from "lucide-react";
+import { Building, Calendar, Euro, Link, Percent } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import queryString from "query-string";
 import CustomTabs from "@/components/ui/custom-tab";
@@ -131,9 +131,7 @@ export function Details({ order }: { order: any }) {
                   Order Value
                 </span>
               </div>
-              <span className="font-semibold">
-                € {totalOrderValue}
-              </span>
+              <span className="font-semibold">€ {totalOrderValue}</span>
             </div>
 
             {/* Property Name */}

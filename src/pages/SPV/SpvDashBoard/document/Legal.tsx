@@ -6,7 +6,7 @@ import {
   EditIcon,
   DownloadIcon,
   UserPlusIcon,
-  EuroIcon,
+  PoundSterling,
   CoinsIcon,
   Upload,
   SquarePen,

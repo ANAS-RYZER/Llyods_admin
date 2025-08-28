@@ -5,7 +5,7 @@ import {
   BarChart,
   Link,
   ArrowRightIcon,
-  Euro,
+  PoundSterling,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ASSET_STEPS_TABS } from "@/constants/global";
@@ -220,7 +220,7 @@ export default function AssetStages({
               value={
                 typeof assetData.pricePerToken === "number" ? (
                   <span className="flex items-center gap-1">
-                    <Euro size={12} />
+                    <PoundSterling size={12} />
                     {assetData.pricePerToken.toLocaleString("en-US", {
                       minimumFractionDigits: 2,
                       maximumFractionDigits: 2,
@@ -247,7 +247,7 @@ export default function AssetStages({
               value={
                 typeof assetData.investmentValue === "number" ? (
                   <span className="flex items-center gap-1">
-                    <Euro size={12} />
+                    <PoundSterling size={12} />
                     {assetData.investmentValue.toLocaleString("en-US", {
                       minimumFractionDigits: 2,
                       maximumFractionDigits: 2,
@@ -257,7 +257,7 @@ export default function AssetStages({
                   assetData.investmentValue
                 )
               }
-              icon={<Euro className="w-4 h-4" />}
+              icon={<PoundSterling className="w-4 h-4" />}
             />
 
             <FormField
@@ -265,7 +265,7 @@ export default function AssetStages({
               value={
                 typeof assetData.expectedIncome === "number" ? (
                   <span className="flex items-center gap-1">
-                    <Euro size={12} />
+                    <PoundSterling size={12} />
                     {assetData.expectedIncome.toLocaleString("en-US", {
                       minimumFractionDigits: 2,
                       maximumFractionDigits: 2,
@@ -275,7 +275,7 @@ export default function AssetStages({
                   assetData.expectedIncome
                 )
               }
-              icon={<Euro className="w-4 h-4" />}
+              icon={<PoundSterling className="w-4 h-4" />}
             />
 
             <FormField

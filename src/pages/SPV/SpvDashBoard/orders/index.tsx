@@ -16,7 +16,7 @@ const Index = () => {
       </header>
       <div className='grid grid-cols-3 gap-4 p-4'>
         <CardConfig title='Total Orders' value='10' />
-        <CardConfig title='Total Amount ' value=' $ 10' />
+        <CardConfig title='Total Amount ' value=' £ 10' />
         <CardConfig title='Pending Orders' value='10' />
       </div>
       <div className='p-4'>

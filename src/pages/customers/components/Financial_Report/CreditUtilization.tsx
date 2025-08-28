@@ -1,4 +1,4 @@
-import { Euro, TrendingUp, Wallet } from "lucide-react";
+import { PoundSterling, TrendingUp, Wallet } from "lucide-react";
 import { PieChart } from "../Charts_Graphs/PieChart";
 import { PieDonutChart } from "../Charts_Graphs/PieChartDonut";
 
@@ -21,16 +21,16 @@ const CreditUtilization = () => {
         <div className=" flex justify-between items-center rounded-xl py-4 w-full">
           <p className="text-sm font-medium">Credit Limit</p>
           <h1 className="text-md font-semibold">
-            € {used_credit + available_credit}
+            £ {used_credit + available_credit}
           </h1>
         </div>
         <div className=" flex justify-between items-center rounded-xl py-4 w-full">
           <p className="text-sm font-medium">Used Limit</p>
-          <h1 className="text-md font-semibold">€ {used_credit}</h1>
+          <h1 className="text-md font-semibold">£ {used_credit}</h1>
         </div>
         <div className=" flex justify-between items-center rounded-xl py-4 w-full">
           <p className="text-sm font-medium">Available Limit</p>
-          <h1 className="text-md font-semibold">€ {available_credit}</h1>
+          <h1 className="text-md font-semibold">£ {available_credit}</h1>
         </div>
       </div>
     </div>

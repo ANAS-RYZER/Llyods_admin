@@ -1,6 +1,6 @@
 import { FormFieldConfig } from "@/components/UseForm/ControllerMap";
 import { Control } from "react-hook-form";
-import { Euro } from "lucide-react";
+import { PoundSterling } from "lucide-react";
 
 export const seetingFormConfig = ({
   control,

@@ -2,7 +2,7 @@ import {
   Building,
   Building2,
   Coins,
-  EuroIcon,
+  PoundSterling,
   MoveUpRight,
 } from "lucide-react";
 import React from "react";

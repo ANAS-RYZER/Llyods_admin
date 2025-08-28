@@ -70,7 +70,7 @@ const Index = () => {
                 "
           >
             {" "}
-            €125,33{" "}
+            £125,33{" "}
           </span>
           <Button className="bg-green-500 hover:bg-green-600 text-white">
             <Play />

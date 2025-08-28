@@ -1,40 +1,43 @@
-import React from 'react'
-import { ArrowUpRight } from 'lucide-react'
+import React from "react";
+import { ArrowUpRight } from "lucide-react";
 
 // Raw asset data (with dollar strings)
 const rawAssets = [
   {
-    name: 'Ryzer Token (RYZ)',
-    amount: '€430,090',
-    color: 'bg-purple-500 text-purple-600',
+    name: "Ryzer Token (RYZ)",
+    amount: "£430,090",
+    color: "bg-purple-500 text-purple-600",
   },
   {
-    name: 'Ethereum (ETH)',
-    amount: '€225,810',
-    color: 'bg-blue-500 text-blue-600',
+    name: "Ethereum (ETH)",
+    amount: "£225,810",
+    color: "bg-blue-500 text-blue-600",
   },
   {
-    name: 'Tether (USDT)',
-    amount: '€175,000',
-    color: 'bg-green-500 text-green-600',
+    name: "Tether (USDT)",
+    amount: "£175,000",
+    color: "bg-green-500 text-green-600",
   },
-]
+];
 
 const AllBalanceRight = () => {
   // Convert string amounts to numbers
   const parsedAssets = rawAssets.map((asset) => ({
     ...asset,
-    numericValue: Number(asset.amount.replace(/[^0-9.-]+/g, '')),
-  }))
+    numericValue: Number(asset.amount.replace(/[^0-9.-]+/g, "")),
+  }));
 
   // Calculate total value
-  const totalValue = parsedAssets.reduce((sum, asset) => sum + asset.numericValue, 0)
+  const totalValue = parsedAssets.reduce(
+    (sum, asset) => sum + asset.numericValue,
+    0
+  );
 
   // Add percentage to each asset
   const assets = parsedAssets.map((asset) => ({
     ...asset,
     percent: (asset.numericValue / totalValue) * 100,
-  }))
+  }));
 
   return (
     <div className="flex flex-col gap-6 p-4 w-full">
@@ -42,15 +45,19 @@ const AllBalanceRight = () => {
         <h3 className="text-sm font-medium text-gray-500">Asset Allocation</h3>
         <div className="mt-4 flex flex-col gap-4">
           {assets.map((asset, i) => {
-            const [bgColor, textColor] = asset.color.split(' ')
+            const [bgColor, textColor] = asset.color.split(" ");
             return (
               <div key={i}>
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-2">
                     <span className={`w-2 h-2 rounded-full ${bgColor}`} />
-                    <span className="text-sm font-medium text-gray-700">{asset.name}</span>
+                    <span className="text-sm font-medium text-gray-700">
+                      {asset.name}
+                    </span>
                   </div>
-                  <div className="text-sm font-semibold text-gray-800">{asset.amount}</div>
+                  <div className="text-sm font-semibold text-gray-800">
+                    {asset.amount}
+                  </div>
                 </div>
                 <div className="w-full flex flex-col gap-1 mt-1">
                   <div className="flex justify-between items-center">
@@ -67,7 +74,7 @@ const AllBalanceRight = () => {
                   </div>
                 </div>
               </div>
-            )
+            );
           })}
         </div>
       </div>
@@ -96,7 +103,7 @@ const AllBalanceRight = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AllBalanceRight
+export default AllBalanceRight;

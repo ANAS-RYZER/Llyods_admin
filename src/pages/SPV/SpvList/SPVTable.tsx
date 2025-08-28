@@ -102,7 +102,7 @@ const SPVTable: React.FC<SPVTableProps> = ({ data, setSpv }) => {
       cell: (info: any) => {
         const aum = info.getValue();
         const value = formatCompactNumber(aum || 0);
-        return <span>€ {value}</span>;
+        return <span>£ {value}</span>;
       },
     },
     {
@@ -145,24 +145,24 @@ const SPVTable: React.FC<SPVTableProps> = ({ data, setSpv }) => {
       cell: (info: any) => {
         return (
           <div className="flex items-center gap-2">
-          <Button
-            variant="outline"
-            size="icon"
-            className="cursor-pointer"
-            type="button"
-            onClick={() => navigate(`/edit-spv/${info.row.original._id}`)}
-          >
-            <Edit className="h-5 w-5" />
-          </Button>
-          <Button
-            variant="outline"
-            size="icon"
-            className="cursor-pointer"
-            type="button"
-            onClick={() => navigate(`/spv/${info.row.original._id}`)}
-          >
-            <Eye className="h-5 w-5" />
-          </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              className="cursor-pointer"
+              type="button"
+              onClick={() => navigate(`/edit-spv/${info.row.original._id}`)}
+            >
+              <Edit className="h-5 w-5" />
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              className="cursor-pointer"
+              type="button"
+              onClick={() => navigate(`/spv/${info.row.original._id}`)}
+            >
+              <Eye className="h-5 w-5" />
+            </Button>
           </div>
         );
       },

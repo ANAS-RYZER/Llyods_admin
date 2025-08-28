@@ -1,5 +1,5 @@
 import React from "react";
-import { EuroIcon } from "lucide-react";
+import { PoundSterling } from "lucide-react";
 export type propertyDataProps = {
   title?: string;
   currentFunding?: number;
@@ -20,7 +20,7 @@ const PropertyData = ({
     // <div>
     //      <div className="flex border border-gray-200 rounded-lg p-4  flex-col ">
     //         <div className="flex items-center gap-1">
-    //         <EuroIcon size={16}/>
+    //         <PoundSterling Icon size={16}/>
     //         <h1 className='text-sm font-normal'> {title}</h1>
     //         </div>
     //         <div className="">
@@ -46,11 +46,11 @@ const PropertyData = ({
       <div className="bg-white shadow-sm rounded-xl flex flex-col justify-center gap-4 p-4 ">
         <div className="flex gap-3 items-center">
           <div className="p-2 bg-gray-100 rounded-full">
-            <EuroIcon className="text-purple-600" />
+            <PoundSterling className="text-purple-600" />
           </div>
           <div>
             <p className="text-sm text-gray-600">{title}</p>
-            <h1 className="text-2xl font-bold">€{currentFunding}</h1>
+            <h1 className="text-2xl font-bold">£{currentFunding}</h1>
           </div>
         </div>
         <div className="w-full flex flex-col gap-1">

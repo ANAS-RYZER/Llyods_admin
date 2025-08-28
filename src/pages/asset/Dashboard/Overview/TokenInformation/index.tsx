@@ -18,7 +18,7 @@ export function TokenInformation({
   const { tokenSupply, minimumTokensToBuy, maximumTokensToBuy, tokenPrice } =
     assetOverview?.tokenInformation || {};
   const { totalPropertyValueAfterFees } = assetOverview || {};
-  
+
   const tokenMetrics = [
     {
       icon: <Info className="h-4 w-4 text-blue-500" />,
@@ -35,15 +35,13 @@ export function TokenInformation({
     {
       icon: <Info className="h-4 w-4 text-purple-500" />,
       title: "Token Price",
-      value: tokenPrice ? `€${tokenPrice.toFixed(2)}` : "N/A",
+      value: tokenPrice ? `£${tokenPrice.toFixed(2)}` : "N/A",
       subtitle: "Price per token in EUR",
     },
     {
       icon: <TrendingUp className="h-4 w-4 text-yellow-500" />,
       title: "Total Asset Gross Value",
-      value: formatCompactNumber(
-        totalPropertyValueAfterFees || 0
-      ),
+      value: formatCompactNumber(totalPropertyValueAfterFees || 0),
       subtitle: "",
     },
   ];

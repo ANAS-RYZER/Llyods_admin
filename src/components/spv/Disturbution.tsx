@@ -1,4 +1,4 @@
-import { Calendar, EuroIcon, MoveUpRight, Percent } from "lucide-react";
+import { Calendar, PoundSterling, MoveUpRight, Percent } from "lucide-react";
 import React from "react";
 
 type propertyDataProps = {

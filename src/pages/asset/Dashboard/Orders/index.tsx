@@ -65,7 +65,7 @@ const Index = ({ assetOverview }: { assetOverview: any }) => {
       accessorKey: "totalOrderValue",
       cell: ({ row }: { row: any }) => {
         const { currency, totalOrderValue } = row.original;
-        const currencySymbol = "€";
+        const currencySymbol = "£";
         return (
           <div className="flex items-center gap-1">
             <span className="text-sm font-light">{currencySymbol}</span>

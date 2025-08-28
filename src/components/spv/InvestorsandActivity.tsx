@@ -45,7 +45,10 @@ const InvestorsandActivity = () => {
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent className="flex flex-col gap-2 my-5 overflow-x-auto" value="investors">
+          <TabsContent
+            className="flex flex-col gap-2 my-5 overflow-x-auto"
+            value="investors"
+          >
             {investors.map((investor) => (
               <div className="flex justify-between border-b py-4">
                 <div className="flex gap-6 items-center">
@@ -61,7 +64,7 @@ const InvestorsandActivity = () => {
                 </div>
                 <div className="flex flex-col items-end">
                   <h1 className="text-md font-medium">
-                    €{investor.investment}
+                    £{investor.investment}
                   </h1>
                   <p className="text-sm text-muted-foreground">
                     {investor.percentage}%

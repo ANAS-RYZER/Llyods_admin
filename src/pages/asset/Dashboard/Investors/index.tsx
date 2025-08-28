@@ -30,8 +30,14 @@ const Index = ({ assetOverview }: { assetOverview: any }) => {
   const [type, setType] = useState("");
   const [search, setSearch] = useState("");
   const debouncedSearch = useDebounce(search, 500);
-  const { investors, getInvestors, pagination, getDocuments, documents,handleSendDocument } =
-    useAssetInvestor();
+  const {
+    investors,
+    getInvestors,
+    pagination,
+    getDocuments,
+    documents,
+    handleSendDocument,
+  } = useAssetInvestor();
   const [investor, setInvestor] = useState<any>(null);
   const navigate = useNavigate();
 
@@ -185,7 +191,7 @@ const Index = ({ assetOverview }: { assetOverview: any }) => {
     setInvestor(null);
   };
 
-  const handleOnSend = (id:string) => {
+  const handleOnSend = (id: string) => {
     if (id) {
       handleSendDocument(id);
     }
@@ -195,11 +201,11 @@ const Index = ({ assetOverview }: { assetOverview: any }) => {
     <div className="space-y-4">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <StatCard title="Total Investors" value={numberOfInvestors} />
-        <StatCard title="Total Revenue" value={totalRaised} prefix="€" />
+        <StatCard title="Total Revenue" value={totalRaised} prefix="£" />
         <StatCard
           title="Average Order Value"
           value={averageInvestment?.toFixed(2)}
-          prefix="€"
+          prefix="£"
         />
       </div>
       <div className="flex items-center justify-between">

@@ -91,8 +91,8 @@ const index = () => {
     legalFeesValue +
     platformFeesValue +
     brokerageFeeValue +
-    reserveFeeValue+
-    insuranceFeeValue  ;
+    reserveFeeValue +
+    insuranceFeeValue;
   const totalPropertyValue = basePropertyValue + totalFees;
 
   return (
@@ -108,8 +108,8 @@ const index = () => {
       </div>
       <InfoTag
         info="Base Property Value"
-        // amount={`${currnecy === "INR" ? "₹" : "€"}${basePropertyValue || 0}`}
-        amount={`€${basePropertyValue || 0}`}
+        // amount={`${currnecy === "INR" ? "₹" : "£"}${basePropertyValue || 0}`}
+        amount={`£${basePropertyValue || 0}`}
         icon={<div />}
       />
       <div className="my-4">
@@ -122,8 +122,8 @@ const index = () => {
       </div>
       <InfoTag
         info="Total Property Value"
-        // amount={`${currnecy === "INR" ? "₹" : "€"}${totalPropertyValue || 0}`}
-        amount={`€${totalPropertyValue || 0}`}
+        // amount={`${currnecy === "INR" ? "₹" : "£"}${totalPropertyValue || 0}`}
+        amount={`£${totalPropertyValue || 0}`}
         icon={<div />}
       />
     </div>

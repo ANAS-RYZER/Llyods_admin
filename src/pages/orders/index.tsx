@@ -85,7 +85,7 @@ const Index = () => {
       accessorKey: "totalOrderValue",
       cell: ({ row }: { row: any }) => {
         const { currency, totalOrderValue } = row.original;
-        const currencySymbol = "€";
+        const currencySymbol = "£";
         return (
           <div className="flex items-center gap-1">
             <span className="text-sm font-light">{currencySymbol}</span>
@@ -96,7 +96,7 @@ const Index = () => {
         );
       },
     },
-    
+
     {
       header: "Payment Type",
       accessorKey: "paymentType",
@@ -289,7 +289,7 @@ const Index = () => {
           orderTrackingStatus={ORDER_TRACKING_STATUS}
         />
       </div>
-      <TableComponent columns={columns} data={orders || []} model='order' />
+      <TableComponent columns={columns} data={orders || []} model="order" />
       <Pagination
         {...pagination}
         onPageChange={onPageChange}

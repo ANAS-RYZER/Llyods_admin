@@ -1,19 +1,19 @@
 import { Button } from "@/components/ui/button";
-import { ArrowUp, CircleAlert, EuroIcon, Filter } from "lucide-react";
+import { ArrowUp, CircleAlert, PoundSterling, Filter } from "lucide-react";
 const financialOverviewData = [
   {
     title: "Monthly Revenue",
-    value: "€125,000",
+    value: "£125,000",
     change: "+5.2%",
   },
   {
     title: "Monthly Expenses",
-    value: "€45,000",
+    value: "£45,000",
     change: "-2.1%",
   },
   {
     title: "Net Operating Income",
-    value: "€80,000",
+    value: "£80,000",
     change: "+8.4%",
   },
   {
@@ -40,7 +40,7 @@ const linkedAssetsData = [
   },
   {
     title: "Total Value",
-    value: "€23.25M",
+    value: "£23.25M",
   },
   {
     title: "Avg ROI",
@@ -112,12 +112,12 @@ const SpvOverViewRight = ({
         <div className="border bg-gradient-to-r from-[#F9FAFB] to-[#EEF2FF] rounded-xl flex flex-col gap-4 p-4">
           <div className="flex gap-3 items-center">
             <div className="p-2 bg-gray-100 rounded-full">
-              <EuroIcon className="text-purple-600" />
+              <PoundSterling className="text-purple-600" />
             </div>
             <div>
               <p className="text-sm text-gray-600">{title}</p>
               <div className="flex items-center gap-2">
-                <h1 className="text-2xl font-bold">€{currentFunding}</h1>
+                <h1 className="text-2xl font-bold">£{currentFunding}</h1>
                 <p className="text-sm text-green-500 flex items-center font-semibold">
                   <ArrowUp size={14} />
                   +5.2% YoY

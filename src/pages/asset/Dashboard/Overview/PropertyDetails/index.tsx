@@ -1,4 +1,4 @@
-import { Building, Euro, PercentCircle, MapPin } from "lucide-react";
+import { Building, PoundSterling, PercentCircle, MapPin } from "lucide-react";
 
 export function PropertyDetails({ assetOverview }: { assetOverview: any }) {
   const name = assetOverview?.name ?? "Unnamed";
@@ -55,7 +55,7 @@ export function PropertyDetails({ assetOverview }: { assetOverview: any }) {
       <div className="flex gap-6">
         <div className="flex items-start">
           <div className="bg-blue-100 w-10 h-10 flex items-center justify-center rounded-full text-2xl text-amber-600">
-            €
+            £
           </div>{" "}
           <div className="ml-2">
             <div className="text-sm text-gray-500">Monthly Income</div>

@@ -5,7 +5,7 @@ import {
   Users,
   Building,
   PercentCircle,
-  Euro,
+  PoundSterling,
 } from "lucide-react";
 import React from "react";
 
@@ -58,13 +58,13 @@ export function OverviewMetrics({
     {
       icon: (
         <div className="w-4 h-4 flex items-center justify-center text-xl text-amber-600">
-          <Euro className="h-5 w-5" />
+          <PoundSterling className="h-5 w-5" />
         </div>
       ),
       title: "Total Raised",
       subtitle: "Progress towards target",
-      value: `€${formatCompactNumber(totalRaised)}`,
-      target: `of € ${formatCompactNumber(totalPropertyValueAfterFees)} target`,
+      value: `£${formatCompactNumber(totalRaised)}`,
+      target: `of £ ${formatCompactNumber(totalPropertyValueAfterFees)} target`,
       percentage: `${raiseProgress.toFixed(2)}%`,
       trend: "up",
       progressColor: "bg-green-500",
@@ -81,7 +81,7 @@ export function OverviewMetrics({
       icon: <Building className="h-5 w-5 text-purple-500" />,
       title: "Property Value",
       subtitle: "Current market valuation",
-      value: `€${formatCompactNumber(totalPropertyValueAfterFees)}`,
+      value: `£${formatCompactNumber(totalPropertyValueAfterFees)}`,
       trend: "up",
       trendColor: "text-green-500",
     },

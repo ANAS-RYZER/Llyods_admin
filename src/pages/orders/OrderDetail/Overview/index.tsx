@@ -51,9 +51,7 @@ const InfoRow = ({
   <div className="flex justify-between items-center">
     <span className="text-gray-600">{label}</span>
     <span className="font-medium">
-      {typeof value === "number"
-        ? `€ ${value}`
-        : value ?? "N/A"}
+      {typeof value === "number" ? `£ ${value}` : value ?? "N/A"}
     </span>
   </div>
 );
@@ -69,7 +67,6 @@ export default function OrderDetailsPage({ order }: { order: Order }) {
     _id,
     currency,
   } = order || {};
-
 
   const tokenPrice = asset?.tokenInformation?.tokenPrice ?? 0;
   const tokenTotal = tokensBooked * tokenPrice;
@@ -128,9 +125,7 @@ export default function OrderDetailsPage({ order }: { order: Order }) {
 
             <div className="flex justify-between items-center mb-6">
               <span className="text-gray-600">Total:</span>
-              <span className="text-xl font-semibold">
-                € {totalOrderValue}
-              </span>
+              <span className="text-xl font-semibold">£ {totalOrderValue}</span>
             </div>
 
             <div className="border-t pt-6">

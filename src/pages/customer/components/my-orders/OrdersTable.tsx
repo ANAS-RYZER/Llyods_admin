@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 import {
   Table,
@@ -10,14 +8,22 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Loader2, ArrowLeft, ArrowRight, Icon, RefreshCw, Euro } from "lucide-react";
+import {
+  ChevronRight,
+  Loader2,
+  ArrowLeft,
+  ArrowRight,
+  Icon,
+  RefreshCw,
+  PoundSterling,
+} from "lucide-react";
 // import { useRouter } from "next/navigation";
 import { useFetchUserOrders } from "@/hooks/order/useFetchUserOrders";
 import { getStatusClasses } from "../helper";
 import { FilterDropdown } from "./FilterDropdown";
 import Pagination from "../common/Pagination";
 import NothingFound from "../common/NothingFound";
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from "react-router-dom";
 import formatDate from "@/constants/formatdate";
 
 const defaultPagination = {
@@ -39,22 +45,20 @@ export const OrdersTable = () => {
     pagination,
   } = useFetchUserOrders(page, 10, selectedStatus, id);
 
-
   const navigateToOrder = (orderId: string) => {
-    navigate(`/order-details/${orderId}`)
+    navigate(`/order-details/${orderId}`);
   };
-
 
   const formatStatusText = (status: string) => {
     return status
-      .replace(/_/g, ' ') // Replace underscores with spaces
+      .replace(/_/g, " ") // Replace underscores with spaces
       .replace(/\b\w/g, (char) => char.toUpperCase()); // Capitalize each word
   };
 
   const handleFiltersChange = (
     filters: { id: string; enabled: boolean; label: string }[]
   ) => {
-    const enabledFilter = filters.find(filter => filter.enabled);
+    const enabledFilter = filters.find((filter) => filter.enabled);
     setSelectedStatus(enabledFilter ? enabledFilter.id : "");
     setPage(1); // Reset to first page when filter changes
   };
@@ -64,7 +68,7 @@ export const OrdersTable = () => {
   };
 
   const renderTableHeader = () => (
-    <TableHeader >
+    <TableHeader>
       <TableRow className="bg-gray-50">
         <TableCell className="font-semibold text-gray-600 hidden md:table-cell">
           ID
@@ -100,14 +104,16 @@ export const OrdersTable = () => {
         {formatDate(order?.created_at)}
       </TableCell>
       <TableCell className="text-gray-700 font-medium">
-        € {order?.total_amount}
+        £ {order?.total_amount}
       </TableCell>
       <TableCell className="text-gray-600 hidden lg:table-cell">
         {formatStatusText(order?.status)}
       </TableCell>
       <TableCell>
         <span
-          className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusClasses(order.status).textClass} ${getStatusClasses(order.status).bgClass}`}
+          className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+            getStatusClasses(order.status).textClass
+          } ${getStatusClasses(order.status).bgClass}`}
         >
           {formatStatusText(order.status)}
         </span>
@@ -127,13 +133,19 @@ export const OrdersTable = () => {
           ID: {order.id}
         </span>
         <span
-          className={`inline-flex items-center  rounded-full text-xs p-2 font-medium ${getStatusClasses(order.status).textClass
-            } ${getStatusClasses(order.status).bgClass}`}
+          className={`inline-flex items-center  rounded-full text-xs p-2 font-medium ${
+            getStatusClasses(order.status).textClass
+          } ${getStatusClasses(order.status).bgClass}`}
         >
           {order.status}
         </span>
         <div className="flex gap-2">
-          <Button variant="ghost" size="icon" onClick={() => navigateToOrder(order.id)} className="h-8 w-8">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => navigateToOrder(order.id)}
+            className="h-8 w-8"
+          >
             <ArrowRight className="h-4 w-4" />
           </Button>
         </div>
@@ -145,7 +157,7 @@ export const OrdersTable = () => {
         Order Date: {formatDate(order?.created_at)}
       </p>
       <p className="text-sm font-medium text-gray-700 mb-2">
-        Amount: €{order?.total_amount}
+        Amount: £{order?.total_amount}
       </p>
       <p className="text-sm text-gray-600 mb-2">
         Status Description: {order.status}
@@ -160,7 +172,7 @@ export const OrdersTable = () => {
           <Button
             variant="ghost"
             size="icon"
-            onClick={() =>  navigate(-1)}
+            onClick={() => navigate(-1)}
             className="hover:bg-gray-100 transition-colors"
           >
             <ArrowLeft className="h-5 w-5 text-gray-600" />
@@ -205,7 +217,7 @@ export const OrdersTable = () => {
           </>
         )}
       </div>
-      <Pagination pager={pagination} onPageChange={handlePageChange}  />
+      <Pagination pager={pagination} onPageChange={handlePageChange} />
     </div>
   );
-}
+};

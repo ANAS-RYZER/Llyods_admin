@@ -3,7 +3,7 @@ import TableComponent from "@/components/TableComponent";
 import {
   EditIcon,
   DownloadIcon,
-  EuroIcon,
+  PoundSterling ,
   CoinsIcon,
   CheckCircle,
   CircleAlert,
@@ -52,7 +52,7 @@ const Order = () => {
         return (
           <div className="flex items-center gap-2">
             <div className="w-10 h-10 flex items-center justify-center rounded-full text-2xl text-amber-600">
-              €
+              £
             </div>{" "}
             <span>{value}</span>
           </div>

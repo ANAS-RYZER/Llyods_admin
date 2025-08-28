@@ -13,7 +13,7 @@ import useTrackCustomerData from "@/hooks/customer/useTrackCustomerData";
 import {
   Check,
   CircleCheckBig,
-  Euro,
+  PoundSterling,
   ShieldAlert,
   ThumbsUp,
 } from "lucide-react";
@@ -77,7 +77,7 @@ const CustomerDetailPage = () => {
             CAIS_Account?.CAIS_Summary?.Total_Outstanding_Balance
               ?.Outstanding_Balance_All || "N/A"
           }
-          Icon={Euro}
+          Icon={PoundSterling}
           color="blue"
         />
         <CreditScoreConfig

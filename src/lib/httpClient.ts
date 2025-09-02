@@ -3,7 +3,7 @@ import axios from 'axios';
 // Create an Axios instance
 const api = axios.create({
   // baseURL: 'http://localhost:3001/api', 
-  baseURL: 'https://backend.ryzer.app/api',
+   baseURL:  'https://backendlloyd.ryzer.app/api',
   headers: {
     'Content-Type': 'application/json',
   },

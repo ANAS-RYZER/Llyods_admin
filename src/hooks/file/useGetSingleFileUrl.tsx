@@ -6,7 +6,7 @@ const useGetSingleFileUrl = () => {
   const getFileUrl = async (id: string) => {
     try {
       const response = await axios.get(
-        `https://backend.ryzer.app/api/s3-file/${id}/s3Url`
+        `https://backendlloyd.ryzer.app/api/s3-file/${id}/s3Url`
       );
       return response.data;
     } catch (error) {

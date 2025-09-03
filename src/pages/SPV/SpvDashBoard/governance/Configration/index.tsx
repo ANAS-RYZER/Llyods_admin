@@ -45,7 +45,7 @@ export default function GovernanceConfigModal() {
 
   const handleSave = () => {
     setOpen(false);
-    // Here you would typically send this data to your backend
+    // Here you would typically send this data to your backendlloyd
   };
 
   const handleTabChange = (value: string) => {

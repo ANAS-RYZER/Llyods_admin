@@ -17,7 +17,7 @@ const useFileUpload = () => {
       formData.append('file', file);
 
       const response = await axios.post(
-        'https://backend.ryzer.app/api/asset',
+        'https://backendlloyd.ryzer.app/api/asset',
         formData,
         {
           headers: {

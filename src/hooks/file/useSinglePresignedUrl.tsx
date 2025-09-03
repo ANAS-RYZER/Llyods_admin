@@ -20,7 +20,7 @@ const useSinglePresignedUrl = () => {
   }) => {
     try {
       const response = await axios.post(
-        'https://backend.ryzer.app/api/s3-file/upload-single',
+        'https://backendlloyd.ryzer.app/api/s3-file/upload-single',
         {
           fileName,
           mimeType,

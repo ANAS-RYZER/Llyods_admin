@@ -68,7 +68,7 @@ const SignatureInvestors = memo(({ tab, step }: Props) => {
         templateName: formGetValues("signatureDocuments.templateName"),
       };
 
-      // create on backend
+      // create on backendlloyd
       const savedTemplate = await createTemplate(newTemplate);
 
       // push to fieldArray immediately
@@ -84,7 +84,7 @@ const SignatureInvestors = memo(({ tab, step }: Props) => {
     console.log('deleting')
     const values = formGetValues().signatureDocuments[deleteIndex];
     remove(deleteIndex); // remove from form
-    await deleteTemplateById(values._id); // remove from backend
+    await deleteTemplateById(values._id); // remove from backendlloyd
     setDeleteIndex(null);
   }
 };

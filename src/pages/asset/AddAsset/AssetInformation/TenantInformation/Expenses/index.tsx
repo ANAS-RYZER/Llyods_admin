@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FormGenerator from "@/components/UseForm/FormGenerator";
 import { expenseFormConfig, formConfig } from "./formConfig";
 import { useFormContext, useFieldArray } from "react-hook-form";
@@ -20,6 +20,7 @@ const index = () => {
     getValues: formGetValues,
     clearErrors,
     trigger,
+    setValue,
   } = useFormContext();
 
   const { fields, append, update, remove } = useFieldArray({
@@ -116,6 +117,37 @@ const index = () => {
 
   let netRent = grossRent - expenses || 0;
   netRent = parseFloat(netRent.toFixed(2));
+
+  useEffect(() => {
+    setValue("rentalInformation.netMonthlyRent", netRent, {
+      shouldValidate: true,
+      shouldDirty: true,
+    });
+    setValue("rentalInformation.grossMonthlyRent", grossRent, {
+      shouldValidate: true,
+      shouldDirty: true,
+    });
+    setValue("rentalInformation.netAnnualRent", netRent * 12, {
+      shouldValidate: true,
+      shouldDirty: true,
+    });
+    setValue("rentalInformation.grossAnnualRent", grossRent * 12, {
+      shouldValidate: true,
+      shouldDirty: true,
+    });
+    setValue("rentalInformation.expenses.monthlyExpenses", expenses, {
+      shouldValidate: true,
+      shouldDirty: true,
+    });
+    setValue("rentalInformation.expenses.annualExpenses", expenses * 12, {
+      shouldValidate: true,
+      shouldDirty: true,
+    });
+    setValue("rentalInformation.netCashFlow", netRent * 12, {
+      shouldValidate: true,
+      shouldDirty: true,
+    });
+  }, [expenses, setValue, netRent, grossRent]);
 
   return (
     <>

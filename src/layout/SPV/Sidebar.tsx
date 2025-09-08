@@ -55,11 +55,11 @@ export default function Sidebar() {
       </div>
 
       <nav className="flex-1 space-y-1">
-        <NavItem
+        {/* <NavItem
           icon={<BarChart className="w-5 h-5" />}
           label="Overview"
           href="overview"
-        />
+        /> */}
 
         <NavItem
           icon={<Users className="w-5 h-5" />}
@@ -91,11 +91,7 @@ export default function Sidebar() {
           href="disturbution"
         />
 
-        <NavItem
-          icon={<Settings className="w-5 h-5" />}
-          label="Settings"
-          href="settings"
-        />
+        
       </nav>
     </div>
   );

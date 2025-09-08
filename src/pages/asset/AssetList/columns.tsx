@@ -69,9 +69,9 @@ const getColumns = (setAsset: (asset: any) => void) => [
       const percentageOfTokensSold = row.percentageOfTokensSold || 0;
       return (
         <Badge className="bg-gray-200 rounded-full text-black hover:bg-gray-200 font-normal">
-          <span className="text-sm">{percentageOfTokensSold}% sold </span>
+          <span className="text-sm">{percentageOfTokensSold.toFixed(2)}% sold </span>
           <span className="text-sm">
-            ({formatCompactNumber(availableTokensToBuy || 0)} left)
+            ({formatCompactNumber(availableTokensToBuy.toFixed(2)  || 0)} left)
           </span>
         </Badge>
       );
@@ -85,7 +85,7 @@ const getColumns = (setAsset: (asset: any) => void) => [
     accessorKey: "totalTokens",
     cell: (info: any) => {
       const totalTokens = info.getValue();
-      const value = formatCompactNumber(totalTokens || 0);
+      const value = formatCompactNumber(totalTokens.toFixed(2) || 0);
       return <span>{value}</span>;
     },
     size: 30,
@@ -97,7 +97,7 @@ const getColumns = (setAsset: (asset: any) => void) => [
     accessorKey: "uniqueInvestorCount",
     cell: (info: any) => {
       const uniqueInvestorCount = info.getValue();
-      const value = formatCompactNumber(uniqueInvestorCount || 0);
+      const value = formatCompactNumber(uniqueInvestorCount.toFixed(2) || 0);
       return <span>{value}</span>;
     },
     maxSize: 50,

@@ -1,6 +1,4 @@
-
-
-import React, { act, useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import {
   AdvancedMarker,
   APIProvider,
@@ -10,11 +8,13 @@ import {
   useAdvancedMarkerRef,
   useMap,
   useMapsLibrary,
-} from '@vis.gl/react-google-maps';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { useFormContext } from 'react-hook-form';
-import { LocationCard } from '@/components/LocationCard';
+} from "@vis.gl/react-google-maps";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useFormContext } from "react-hook-form";
+import { LocationCard } from "@/components/LocationCard";
+import { NearbyPlaces, useGetPlaces } from "@/hooks/asset/useGetPlaces";
+import { useParams } from "react-router-dom";
 
 interface MapHandlerProps {
   place: google.maps.places.PlaceResult | null;
@@ -27,39 +27,54 @@ interface PlaceAutocompleteProps {
 
 const Index: React.FC = () => {
   const { setValue, watch } = useFormContext();
-  const latitude = watch('latitude') || 46.0566763;
-  const longitude = watch('longitude') || 14.4942074;
+  const latitude = watch("latitude") || 46.0566763;
+  const longitude = watch("longitude") || 14.4942074;
+  const { id = null } = useParams<{ id?: string }>();
+
   const [markerRef, marker] = useAdvancedMarkerRef();
   const [selectedPlace, setSelectedPlace] =
     useState<google.maps.places.PlaceResult | null>(null);
-  const [activeTab, setActiveTab] = useState<string>('all');
 
+  const [activeTab, setActiveTab] = useState<"all" | keyof NearbyPlaces>("all");
+
+  // ✅ custom hook
+  const { places, loading, error, getPlaces } = useGetPlaces();
+
+  /** Fetch places whenever lat/lng changes */
+  useEffect(() => {
+    if (!latitude || !longitude || !id) return;
+    getPlaces({
+      assetId: id,
+      lat: latitude.toString(),
+      lng: longitude.toString(),
+    });
+  }, [latitude, longitude, id]);
+
+  /** Map handler: update marker + move map */
   const MapHandler = ({ place, marker }: MapHandlerProps) => {
     const map = useMap();
 
     useEffect(() => {
       if (!map || !place || !marker) return;
       if (place.geometry?.viewport) {
-        map.fitBounds(place.geometry?.viewport);
+        map.fitBounds(place.geometry.viewport);
       }
-      marker.position = place.geometry?.location;
+      marker.position = place.geometry?.location || null;
     }, [map, place, marker]);
 
     return null;
   };
 
+  /** Autocomplete input */
   const PlaceAutocomplete = ({ onPlaceSelect }: PlaceAutocompleteProps) => {
     const [placeAutocomplete, setPlaceAutocomplete] =
       useState<google.maps.places.Autocomplete | null>(null);
     const inputRef = React.useRef<HTMLInputElement>(null);
-    const placesLib = useMapsLibrary('places');
+    const placesLib = useMapsLibrary("places");
 
     useEffect(() => {
       if (!placesLib || !inputRef.current) return;
-      const options = {
-        fields: ['geometry', 'name', 'formatted_address'],
-      };
-
+      const options = { fields: ["geometry", "name", "formatted_address"] };
       setPlaceAutocomplete(
         new placesLib.Autocomplete(inputRef.current, options)
       );
@@ -67,82 +82,79 @@ const Index: React.FC = () => {
 
     useEffect(() => {
       if (!placeAutocomplete) return;
-      placeAutocomplete.addListener('place_changed', () => {
+      placeAutocomplete.addListener("place_changed", () => {
         onPlaceSelect(placeAutocomplete.getPlace());
       });
     }, [onPlaceSelect, placeAutocomplete]);
 
     return (
-      <div className='w-full h-full'>
+      <div className="w-full h-full">
         <input
           ref={inputRef}
-          className='h-10 w-64 p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500'
-          placeholder='Search for a place...'
+          className="h-10 w-64 p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Search for a place..."
         />
       </div>
     );
   };
 
-  const rawLocations = watch('nearByLocations') || {
+  /** Tabs filtering */
+  const rawLocations: NearbyPlaces = places || {
     school: [],
     gym: [],
     hospital: [],
     cinema: [],
     cafe: [],
-    garden: [],
-    'medical-post': [],
-    office: [],
-    'police-station': [],
+    "police-station": [],
   };
 
-  const locationTypes = Object.keys(rawLocations || {});
-  locationTypes.unshift('all');
+  const locationTypes: ("all" | keyof NearbyPlaces)[] = [
+    "all",
+    ...(Object.keys(rawLocations) as (keyof NearbyPlaces)[]),
+  ];
 
-  const getPlacesByType = (type: string) => {
-    if (type === 'all') {
+  const getPlacesByType = (type: keyof NearbyPlaces | "all") => {
+    if (type === "all") {
       return Object.values(rawLocations).flat();
     }
-    return rawLocations[type] || [];
+    return rawLocations[type];
   };
+
   const locationPlaces = getPlacesByType(activeTab);
 
   return (
-    <div className='container mx-auto'>
-      <Card className='mb-6'>
-        <CardHeader className='pb-3'>
+    <div className="container mx-auto">
+      <Card className="mb-6">
+        <CardHeader className="pb-3">
           <CardTitle>Location of the Asset</CardTitle>
         </CardHeader>
         <CardContent>
           <APIProvider
-            apiKey={'AIzaSyAKvCWffHz_mRNXfCm98xjaPwLgcS9X90g'}
-            solutionChannel='GMP_devsite_samples_v3_rgmautocomplete'
+            apiKey="AIzaSyAKvCWffHz_mRNXfCm98xjaPwLgcS9X90g" // ✅ hardcoded key
+            solutionChannel="GMP_devsite_samples_v3_rgmautocomplete"
           >
-            <div className='w-full h-96 rounded-lg overflow-hidden'>
+            <div className="w-full h-96 rounded-lg overflow-hidden">
               <Map
-                style={{ width: '100%', height: '100%' }}
+                style={{ width: "100%", height: "100%" }}
                 defaultCenter={{ lat: latitude, lng: longitude }}
-                defaultZoom={5}
-                gestureHandling={'greedy'}
+                defaultZoom={12}
+                gestureHandling="greedy"
                 disableDefaultUI={false}
-                mapId={'fe235e0bea87fda6'}
+                mapId="fe235e0bea87fda6"
               >
                 <AdvancedMarker
                   ref={markerRef}
-                  onClick={() => {
-                    console.log('Marker clicked');
-                  }}
-                  onDrag={(e) => {
-                    setValue('latitude', e.latLng?.lat() || 0);
-                    setValue('longitude', e.latLng?.lng() || 0);
-                  }}
                   draggable={true}
-                  position={{
-                    lat: latitude,
-                    lng: longitude,
+                  position={{ lat: latitude, lng: longitude }}
+                  onDragEnd={(e) => {
+                    const lat = e.latLng?.lat() || 0;
+                    const lng = e.latLng?.lng() || 0;
+                    setValue("latitude", lat);
+                    setValue("longitude", lng);
                   }}
                 />
                 <MapControl position={ControlPosition.TOP}>
-                  <div className='absolute top-4 left-1/2 transform -translate-x-1/2 bg-white rounded-lg shadow-md'>
+                  <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-white rounded-lg shadow-md">
                     <PlaceAutocomplete onPlaceSelect={setSelectedPlace} />
                   </div>
                 </MapControl>
@@ -153,24 +165,30 @@ const Index: React.FC = () => {
         </CardContent>
       </Card>
 
-      <div className='flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4'>
-        <h1 className='text-2xl font-bold'>Nearby Places</h1>
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
+        <h1 className="text-2xl font-bold">Nearby Places</h1>
       </div>
+
+      {loading && <p>Loading nearby places...</p>}
+      {error && <p className="text-red-500">{error}</p>}
 
       <Tabs
         value={activeTab}
-        onValueChange={setActiveTab}
-        className='mb-6 w-full h-full'
+        onValueChange={(val) =>
+          setActiveTab(val as "all" | keyof NearbyPlaces)
+        }
+        className="mb-6 w-full h-full"
       >
-        <TabsList className='mb-4 flex flex-wrap justify-start h-full'>
+        <TabsList className="mb-4 flex flex-wrap justify-start h-full">
           {locationTypes.map((type) => (
-            <TabsTrigger key={type} value={type} className='flex gap-1'>
-              <span className='capitalize'>{type.replace(/-/g, ' ')}</span>
+            <TabsTrigger key={type} value={type as string} className="flex gap-1">
+              <span className="capitalize">{type.replace(/-/g, " ")}</span>
             </TabsTrigger>
           ))}
         </TabsList>
       </Tabs>
-      <div className='grid gap-4'>
+
+      <div className="grid gap-4">
         {locationPlaces.map(
           (location: {
             _id: string;
@@ -183,7 +201,7 @@ const Index: React.FC = () => {
             distanceInKm: number;
             isActive: boolean;
           }) => (
-            <LocationCard location={location} />
+            <LocationCard key={location._id} location={location} />
           )
         )}
       </div>

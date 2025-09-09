@@ -108,9 +108,18 @@ const Index: React.FC = () => {
     "police-station": [],
   };
 
+  const allowedTypes: (
+    | "school"
+    | "gym"
+    | "hospital"
+    | "cinema"
+    | "cafe"
+    | "police-station"
+  )[] = ["school", "gym", "hospital", "cinema", "cafe", "police-station"];
+
   const locationTypes: ("all" | keyof NearbyPlaces)[] = [
     "all",
-    ...(Object.keys(rawLocations) as (keyof NearbyPlaces)[]),
+    ...allowedTypes,
   ];
 
   const getPlacesByType = (type: keyof NearbyPlaces | "all") => {
@@ -130,7 +139,7 @@ const Index: React.FC = () => {
         </CardHeader>
         <CardContent>
           <APIProvider
-            apiKey="AIzaSyAKvCWffHz_mRNXfCm98xjaPwLgcS9X90g" // ✅ hardcoded key
+            apiKey="AIzaSyAKvCWffHz_mRNXfCm98xjaPwLgcS9X90g" 
             solutionChannel="GMP_devsite_samples_v3_rgmautocomplete"
           >
             <div className="w-full h-96 rounded-lg overflow-hidden">
@@ -174,14 +183,16 @@ const Index: React.FC = () => {
 
       <Tabs
         value={activeTab}
-        onValueChange={(val) =>
-          setActiveTab(val as "all" | keyof NearbyPlaces)
-        }
+        onValueChange={(val) => setActiveTab(val as "all" | keyof NearbyPlaces)}
         className="mb-6 w-full h-full"
       >
         <TabsList className="mb-4 flex flex-wrap justify-start h-full">
           {locationTypes.map((type) => (
-            <TabsTrigger key={type} value={type as string} className="flex gap-1">
+            <TabsTrigger
+              key={type}
+              value={type as string}
+              className="flex gap-1"
+            >
               <span className="capitalize">{type.replace(/-/g, " ")}</span>
             </TabsTrigger>
           ))}

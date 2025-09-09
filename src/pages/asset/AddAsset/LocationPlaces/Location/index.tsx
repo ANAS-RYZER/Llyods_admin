@@ -105,9 +105,6 @@ const Index: React.FC = () => {
     hospital: [],
     cinema: [],
     cafe: [],
-    garden: [],
-    "medical-post": [],
-    office: [],
     "police-station": [],
   };
 

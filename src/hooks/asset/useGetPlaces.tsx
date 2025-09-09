@@ -12,9 +12,6 @@ export type NearbyPlaces = {
   hospital: any[];
   cinema: any[];
   cafe: any[];
-  garden: any[];
-  "medical-post": any[];
-  office: any[];
   "police-station": any[];
 };
 
